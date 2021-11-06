@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
 
 
     public static PlayerManager instance;
+    public static Vector3 postion;
 
     //player attribute
     public static float PlayerHP = 100f;
@@ -25,8 +26,22 @@ public class PlayerManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+     void Update()
+    {
+        if(UiManager.isload ==false )
+        {
+            postion = this.transform.position;
 
-    
+        }
+        else
+        {
+            this.transform.position=postion  ;
+            UiManager.isload = false;
+        }
+       // Debug.Log(postion);
+    }
 
-    
+
+
+
 }

@@ -220,7 +220,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             i++;
-            Debug.Log(i);
+
             if (i%2==0)
             {
                 transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
