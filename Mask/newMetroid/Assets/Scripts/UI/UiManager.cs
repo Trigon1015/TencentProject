@@ -61,16 +61,27 @@ public class UiManager : MonoBehaviour
     }
 
     public void LoadGame()
-    { 
+    {
+        
         loadscene();
-        SceneManager.LoadScene(scene);
+        if(SceneManager.GetActiveScene().buildIndex>scene|| SceneManager.GetActiveScene().buildIndex<scene )
+        {
+            SceneManager.LoadScene(scene);
+            
+            Debug.Log("1");
+        }
+        menu.SetActive(false);
+
         Time.timeScale = 1;
         loadhealth();
        
         X();
         Y();
         Z();
-        LoadPosition();
+        
+        
+       LoadPosition();
+        Debug.Log("2");
 
     }
     public void LoadPosition()
@@ -85,7 +96,7 @@ public class UiManager : MonoBehaviour
         PlayerPrefs.SetFloat("x", xx);
         PlayerPrefs.SetFloat("y", yy);
         PlayerPrefs.SetFloat("z", zz);Debug.Log(xx);
-        Debug.Log(PlayerPrefs.GetFloat("x"));
+       
     }
 
     private void Update()
