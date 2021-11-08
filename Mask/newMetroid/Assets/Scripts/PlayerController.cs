@@ -140,7 +140,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
+    
 
     private void UpdateAnimation()
     {
@@ -224,10 +224,12 @@ public class PlayerController : MonoBehaviour
             if (i%2==0)
             {
                 transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+                
             }
-            if (i%2==1)
+            if (i%2==1&&SmallCheck.CanSamll ==true  )
             {
                 transform.localScale = new Vector3(5f, 5f, 5f);
+                transform.localPosition += new Vector3(0, 0.3f, 0);
             }
             
             

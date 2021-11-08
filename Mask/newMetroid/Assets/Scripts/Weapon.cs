@@ -17,23 +17,28 @@ public class Weapon : MonoBehaviour
         
         if(!PlayerController.activate)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if(Time .timeScale ==1)
             {
-                Shoot();
-                
-                if (PlayerController.isRunning)
+                if (Input.GetButtonDown("Fire1"))
                 {
-                    PlayerController.isRunShooting = true;
-                    PlayerController.isStandShooting = false;
-                }
-                else
-                {
-                    PlayerController.isStandShooting = true;
-                    PlayerController.isRunShooting = false;
-                }
-                if(PlayerController.isCrouching)
-                {
-                    PlayerController.isCrouchShooting = true;
+                    Shoot();
+
+                    if (PlayerController.isRunning)
+                    {
+                        PlayerController.isRunShooting = true;
+                        PlayerController.isStandShooting = false;
+                    }
+                    else
+                    {
+                        PlayerController.isStandShooting = true;
+                        PlayerController.isRunShooting = false;
+                    }
+                    if (PlayerController.isCrouching)
+                    {
+                        PlayerController.isCrouchShooting = true;
+                    }
+
+
                 }
 
 

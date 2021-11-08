@@ -9,8 +9,12 @@ public class ExitScene : MonoBehaviour
     public string exitName;
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        PlayerPrefs.SetString("LastExitName", exitName);
-        SceneManager.LoadScene(sceneToLoad);
+    {if(collision.tag =="Player")
+        {
+            PlayerPrefs.SetString("LastExitName", exitName);
+            SceneManager.LoadScene(sceneToLoad);
+
+        }
+        
     }
 }
