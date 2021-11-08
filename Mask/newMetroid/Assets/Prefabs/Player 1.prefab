@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5134720395795117199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.026, y: -0.233, z: 0}
+  m_LocalPosition: {x: -0.002, y: -0.188, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5134720396748049342}
@@ -176,8 +176,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03440967, y: -0.06594876}
-  m_Size: {x: 0.10474501, y: 0.37835896}
+  m_Offset: {x: -0.0052108765, y: -0.010763002}
+  m_Size: {x: 0.13870545, y: 0.36420876}
   m_Direction: 0
 --- !u!114 &5134720396748049333
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 5
   Firepoint: {fileID: 5513416395954634363}
-  jumpForce: 10
+  jumpForce: 12
   fallMultiplier: 2.5
   lowJumpMultiplier: 4
   rb: {fileID: 5134720396748049339}
@@ -239,6 +239,8 @@ MonoBehaviour:
   firepoint: {fileID: 5513416395954634362}
   crouchfirepoint: {fileID: 5513416396726460612}
   bulletPrefabs: {fileID: 6693732988689493168, guid: e56f61e0f7e75f84ea2ae8f5f8e2b7c8, type: 3}
+  bulletPrefabs1: {fileID: 0}
+  bulletPrefabs2: {fileID: 0}
   CbulletPrefabs: {fileID: 79638266592473741, guid: 6fea89496ce5c414fa505a4d9e16c116, type: 3}
 --- !u!114 &5513416396472146441
 MonoBehaviour:
