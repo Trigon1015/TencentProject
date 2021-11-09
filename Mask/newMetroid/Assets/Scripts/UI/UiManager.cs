@@ -59,7 +59,27 @@ public class UiManager : MonoBehaviour
     {
         savedata();
     }
+    public void Load()
+    {
+        loadscene();
+        if (SceneManager.GetActiveScene().buildIndex > scene || SceneManager.GetActiveScene().buildIndex < scene)
+        {
+            SceneManager.LoadScene(scene);
 
+            Debug.Log("1");
+        }
+        Time.timeScale = 1;
+        loadhealth();
+
+        X();
+        Y();
+        Z();
+
+
+        LoadPosition();
+        Debug.Log("2");
+
+    }
     public void LoadGame()
     {
         
@@ -70,9 +90,7 @@ public class UiManager : MonoBehaviour
             
             Debug.Log("1");
         }
-        menu.SetActive(false);
-
-        Time.timeScale = 1;
+        ResumeGame();
         loadhealth();
        
         X();
@@ -82,6 +100,7 @@ public class UiManager : MonoBehaviour
         
        LoadPosition();
         Debug.Log("2");
+        
 
     }
     public void LoadPosition()

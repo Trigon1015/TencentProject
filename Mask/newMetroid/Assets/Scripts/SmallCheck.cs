@@ -10,11 +10,11 @@ public class SmallCheck : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         CanSamll = false;
-        Debug.Log("cannot");
+        //Debug.Log("cannot");
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         CanSamll = true;
-        Debug.Log("can");
+        //Debug.Log("can");
     }
 }

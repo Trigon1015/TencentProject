@@ -24,9 +24,10 @@ public class PlayerController : MonoBehaviour
     
     private bool inverted = false;
     private bool canJump;
-    
+
 
     //running and flipping 
+    static public bool isTalking = false; 
     static public bool isRunning;
     private bool isFacingRight = true;
     static public bool isRunShooting;
@@ -185,9 +186,13 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            isTalking =!isTalking ;
+            Debug.Log(isTalking);
+        }
 
-
-        if (Input.GetKeyDown(KeyCode.A))
+            if (Input.GetKeyDown(KeyCode.A))
         {
             isCrouching = false;
 
