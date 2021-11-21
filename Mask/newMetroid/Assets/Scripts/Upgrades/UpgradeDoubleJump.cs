@@ -11,6 +11,10 @@ public class  UpgradeDoubleJump: MonoBehaviour
     {
 
         playerPosition = GameObject.Find("Player 1").transform;
+        if(PlayerController.availableJumps == 2)
+        {
+            Destroy(gameObject);
+        }
 
     }
     private void OnTriggerEnter2D (Collider2D collider)

@@ -20,8 +20,10 @@ public class PlayerController : MonoBehaviour
 
     static public int availableJumps = 1;
     static public int availableJumpsLeft;
+    static public bool MaskUpgrade = false;
+    static public bool MorphUpgrade = false;
 
-    
+
     private bool inverted = false;
     private bool canJump;
 
@@ -37,6 +39,7 @@ public class PlayerController : MonoBehaviour
     static public bool isShootingUp;
     static public bool hurtplayer;
     static public bool isCrouchShooting;
+    
     static public float HurtTime = 0;
     public Rigidbody2D rb;
     private Animator animator;
@@ -145,6 +148,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateAnimation()
     {
+        
         animator.SetBool("isRunning", isRunning);
         animator.SetBool("isGrounded", isGrounded);
         animator.SetBool("isRunShooting", isRunShooting);
@@ -153,6 +157,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("isCrouching", isCrouching);
         animator.SetBool("isShootingUp", isShootingUp);
         animator.SetBool("isCrouchShooting", isCrouchShooting);
+        
         
     }
     int i = 1;
@@ -163,14 +168,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
+            FindObjectOfType<AudioManager>().Play("JumpSound");
             
         }
         if(Input.GetKeyDown(KeyCode.S))
         {
             isCrouching = true;
-            
-        }
+            isShootingUp = false;
 
+
+        }
+        
 
 
         if (Input.GetKeyDown(KeyCode.W))
@@ -179,7 +187,7 @@ public class PlayerController : MonoBehaviour
             {
                 isCrouching = false;
             }
-            else
+            else 
             {
                 isShootingUp = true;
                 
@@ -192,15 +200,18 @@ public class PlayerController : MonoBehaviour
             Debug.Log(isTalking);
         }
 
-            if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.A))
         {
             isCrouching = false;
+            isShootingUp = false;
 
         }
+
         if (Input.GetKeyDown(KeyCode.D))
         {
             isCrouching = false;
-            
+            isShootingUp = false;
+
         }
         if (isCrouching)
         {
@@ -222,7 +233,7 @@ public class PlayerController : MonoBehaviour
         {
             capsuleCollider.size = new Vector2(ColliderSizeX, ColliderSizeY);
         }
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.U)&&MorphUpgrade)
         {
             i++;
 
@@ -410,7 +421,8 @@ public class PlayerController : MonoBehaviour
     
     private void Mask1()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+
+        if (Input.GetKeyDown(KeyCode.F)&& MaskUpgrade)
         {
 
             activate = !activate;
