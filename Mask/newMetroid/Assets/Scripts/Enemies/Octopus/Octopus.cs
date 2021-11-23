@@ -7,7 +7,7 @@ public class Octopus : Enemies
     public float interval;
     public float jumpSpeed;
 
-    private Animator ani;
+    private new Animator ani;
     private bool isJumping;
 
     private void Start()
