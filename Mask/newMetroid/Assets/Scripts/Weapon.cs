@@ -6,22 +6,30 @@ public class Weapon : MonoBehaviour
 {
     public UnityEngine.Transform firepoint;
     public UnityEngine.Transform crouchfirepoint;
+    public UnityEngine.Transform Upfirepoint;
     public GameObject bulletPrefabs;
     public GameObject bulletPrefabs1;
     public GameObject bulletPrefabs2;
     public GameObject CbulletPrefabs;
-
+  
     // Update is called once per frame
+ 
     void Update()
     {
         
         if(!PlayerController.activate)
         {
             if(Time .timeScale ==1)
-            {
+            {   
                 if (Input.GetButtonDown("Fire1"))
                 {
                     Shoot();
+
+                    FindObjectOfType<AudioManager>().Play("Shooting");
+                    
+                    
+                    
+                    
 
                     if (PlayerController.isRunning)
                     {
@@ -40,6 +48,8 @@ public class Weapon : MonoBehaviour
 
 
                 }
+               
+                
 
 
             }
@@ -63,18 +73,37 @@ public class Weapon : MonoBehaviour
         
         if(!PlayerController.isCrouching)
         {
-            if (Shield.bullet ==0 )
+            if (PlayerController.isShootingUp)
             {
-                Instantiate(bulletPrefabs, firepoint.position, firepoint.rotation);
+                if (Shield.bullet == 0)
+                {
+                    Instantiate(bulletPrefabs, Upfirepoint.position, Upfirepoint.rotation);
+                }
+                if (Shield.bullet == 1)
+                {
+                    Instantiate(bulletPrefabs1, Upfirepoint.position, Upfirepoint.rotation);
+                }
+                if (Shield.bullet == 2)
+                {
+                    Instantiate(bulletPrefabs2, Upfirepoint.position, Upfirepoint.rotation);
+                }
             }
-            if (Shield.bullet == 1)
+            else
             {
-                Instantiate(bulletPrefabs1, firepoint.position, firepoint.rotation);
+                if (Shield.bullet == 0)
+                {
+                    Instantiate(bulletPrefabs, firepoint.position, firepoint.rotation);
+                }
+                if (Shield.bullet == 1)
+                {
+                    Instantiate(bulletPrefabs1, firepoint.position, firepoint.rotation);
+                }
+                if (Shield.bullet == 2)
+                {
+                    Instantiate(bulletPrefabs2, firepoint.position, firepoint.rotation);
+                }
             }
-            if (Shield.bullet == 2)
-            {
-                Instantiate(bulletPrefabs2, firepoint.position, firepoint.rotation);
-            }
+            
 
         }
         else
@@ -95,6 +124,9 @@ public class Weapon : MonoBehaviour
         }
         
 
+        
+        
+
     }
 
     void CShoot()
@@ -102,7 +134,15 @@ public class Weapon : MonoBehaviour
         //shooting logic
         if (!PlayerController.isCrouching)
         {
-            Instantiate(CbulletPrefabs, firepoint.position, firepoint.rotation);
+            if(PlayerController.isShootingUp)
+            {
+                Instantiate(CbulletPrefabs, Upfirepoint.position, Upfirepoint.rotation);
+            }
+            else
+            {
+                Instantiate(CbulletPrefabs, firepoint.position, firepoint.rotation);
+            }
+            
         }
         else
         {

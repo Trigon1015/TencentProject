@@ -82,8 +82,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         
+        if (!isRunning || !isGrounded)
+        {
+            FindObjectOfType<AudioManager>().Play("Running");
+        }
+        
+
         //Ãæ¾ß3
         Castle();
         
@@ -139,6 +144,9 @@ public class PlayerController : MonoBehaviour
         checkEnvironment();
         CheckIfCanJump();
         AnimationContoller();
+        
+        
+        
 
 
 
@@ -190,6 +198,7 @@ public class PlayerController : MonoBehaviour
             else 
             {
                 isShootingUp = true;
+                isStandShooting = false;
                 
             }
 
@@ -316,7 +325,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = new Vector2(movementSpeed * InputDirection, rb.velocity.y);
         
-       
+
 
 
     }
