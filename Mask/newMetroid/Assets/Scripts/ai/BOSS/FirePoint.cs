@@ -5,13 +5,14 @@ using UnityEngine;
 public class FirePoint : MonoBehaviour
 {
     public UnityEngine.Transform BossFirepoint;
-    public UnityEngine.Transform BossFirepoint1;
-    public UnityEngine.Transform BossFirepoint2;
-    public GameObject bulletPrefabs;
-    private float attackSpeed = 3;
+    public GameObject bulletright1;
+    public GameObject bulletright2;
+    public GameObject bulletright3;
+    public GameObject bulletleft1;
+    public GameObject bulletleft2;
+    public GameObject bulletleft3;
+    public static float attackSpeed = 2;
 
-    public Quaternion Fire2;
-    private Quaternion Fire3;
 
     // Start is called before the first frame update
     void Start()
@@ -22,20 +23,36 @@ public class FirePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        attackSpeed -= Time.deltaTime;
-        
-        if (attackSpeed <= 0)
+        if (BossThrowState.attack == true)
         {
-            attack();
-            attackSpeed = 3;
+            attackSpeed -= Time.deltaTime;
+
+            if (attackSpeed <= 0)
+            {
+
+                attack();
+                attackSpeed = 2;
+            }
+
         }
+        else attackSpeed = 2;
+        
     }
     private void attack()
     {
-        
-        Instantiate(bulletPrefabs, BossFirepoint.position, BossFirepoint.rotation);
-     
-        Instantiate(bulletPrefabs, BossFirepoint1.position, BossFirepoint1.rotation);
-        Instantiate(bulletPrefabs, BossFirepoint2.position, BossFirepoint2.rotation);
+        if (BOSSFSM.right == false)
+        {
+            Instantiate(bulletleft1, BossFirepoint.position, BossFirepoint.rotation);
+            Instantiate(bulletleft2, BossFirepoint.position, BossFirepoint.rotation);
+            Instantiate(bulletleft3, BossFirepoint.position, BossFirepoint.rotation);
+           
+        }
+        else
+        {
+            Instantiate(bulletright1, BossFirepoint.position, BossFirepoint.rotation);
+            Instantiate(bulletright2, BossFirepoint.position, BossFirepoint.rotation);
+            Instantiate(bulletright3, BossFirepoint.position, BossFirepoint.rotation);
+
+        }
     }
 }

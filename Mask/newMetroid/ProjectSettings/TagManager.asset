@@ -11,6 +11,7 @@ TagManager:
   - PlayerBullet
   - Bullet RED
   - Bullet BLUE
+  - BossBullet
   layers:
   - Default
   - TransparentFX
@@ -25,9 +26,9 @@ TagManager:
   - Bullet
   - Shield
   - SmallCheck
-  - 
-  - 
-  - 
+  - boss
+  - PlayerBossBullet
+  - BossBullet
   - 
   - 
   - 
@@ -62,4 +63,7 @@ TagManager:
     locked: 0
   - name: enemy
     uniqueID: 988476483
+    locked: 0
+  - name: PlayerBossBullet
+    uniqueID: 3566278483
     locked: 0

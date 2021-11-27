@@ -10,6 +10,7 @@ public class Weapon : MonoBehaviour
     public GameObject bulletPrefabs;
     public GameObject bulletPrefabs1;
     public GameObject bulletPrefabs2;
+    public GameObject BossbulletPrefabs;
     public GameObject CbulletPrefabs;
   
     // Update is called once per frame
@@ -87,6 +88,7 @@ public class Weapon : MonoBehaviour
                 {
                     Instantiate(bulletPrefabs2, Upfirepoint.position, Upfirepoint.rotation);
                 }
+                
             }
             else
             {
@@ -101,6 +103,11 @@ public class Weapon : MonoBehaviour
                 if (Shield.bullet == 2)
                 {
                     Instantiate(bulletPrefabs2, firepoint.position, firepoint.rotation);
+                }
+                if (Shield.bullet == 3)
+                {
+                    Instantiate(BossbulletPrefabs, Upfirepoint.position, firepoint.rotation);
+                    Shield.bullet = 0;
                 }
             }
             
@@ -120,7 +127,12 @@ public class Weapon : MonoBehaviour
             {
                 Instantiate(bulletPrefabs2, crouchfirepoint.position, firepoint.rotation);
             }
-            
+            if (Shield.bullet == 3)
+            {
+                Instantiate(BossbulletPrefabs, Upfirepoint.position, firepoint.rotation);
+                Shield.bullet = 0;
+            }
+
         }
         
 
