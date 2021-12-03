@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    private Animator anim;
     public float speed = 20f;
     public Rigidbody2D rb;
-    public static float count = 3;
+    public GameObject Impact;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,20 +18,16 @@ public class Bullet : MonoBehaviour
     }
     private void Update()
     {
-        count -= 1 * Time.deltaTime;
-        if (count <= 0)
-        {
-            Destroy(gameObject);
-            count = 3;
-
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D info)
     {
         if(info.gameObject.tag == "Environment")
         {
+            Instantiate(Impact,transform.position,transform.rotation);
             Destroy(gameObject);
+            
         }
 
         if(info.gameObject.tag == "Player")
@@ -39,14 +36,15 @@ public class Bullet : MonoBehaviour
             //Debug.Log("HP"+PlayerManager.PlayerHP);
 
 
-
+            Instantiate(Impact, transform.position, transform.rotation);
             Destroy(gameObject);
 
         }
 
         if (info.gameObject.tag == "Shield")
         {
-      
+
+            Instantiate(Impact, transform.position, transform.rotation);
             Destroy(gameObject);
 
         }

@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float lowJumpMultiplier;
     
 
-    static public int availableJumps = 1;
+    static public int availableJumps = 2;
     static public int availableJumpsLeft;
     static public bool MaskUpgrade = false;
     static public bool MorphUpgrade = false;
@@ -431,7 +431,8 @@ public class PlayerController : MonoBehaviour
     private void Mask1()
     {
 
-        if (Input.GetKeyDown(KeyCode.F)&& MaskUpgrade)
+        //if (Input.GetKeyDown(KeyCode.F)&&MaskUpgrade)
+        if (Input.GetKeyDown(KeyCode.F))
         {
 
             activate = !activate;

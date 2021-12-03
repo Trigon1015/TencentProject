@@ -13,11 +13,13 @@ public class Shield : MonoBehaviour
 
     void Update()
     {
-        
+       
+       
         
         
     }
-     public static int bullet=3;
+    public static int bullet=3;
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,6 +31,7 @@ public class Shield : MonoBehaviour
                 bullet = 0;
                 Debug.Log("Absorb");
                 Debug.Log(bullet );
+                Weapon.count = 4;
             }
             else
             {
@@ -47,6 +50,7 @@ public class Shield : MonoBehaviour
                 bullet = 1;
                 Debug.Log("Absorb");
                 Debug.Log(bullet );
+                Weapon.count = 4;
             }
             else
             {
@@ -65,6 +69,7 @@ public class Shield : MonoBehaviour
                 bullet = 2;
                 Debug.Log("Absorb");
                 Debug.Log(bullet );
+                Weapon.count = 4;
             }
             else
             {
@@ -83,6 +88,7 @@ public class Shield : MonoBehaviour
                 bullet = 3;
                 Debug.Log("Absorb");
                 Debug.Log(bullet);
+                Weapon.count = 4;
             }
             else
             {

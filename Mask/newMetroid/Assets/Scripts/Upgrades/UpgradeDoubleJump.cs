@@ -9,14 +9,16 @@ public class  UpgradeDoubleJump: MonoBehaviour
 
     void Start()
     {
-
+        
         playerPosition = GameObject.Find("Player 1").transform;
         if(PlayerController.availableJumps == 2)
         {
             Destroy(gameObject);
         }
+        
 
     }
+    
     private void OnTriggerEnter2D (Collider2D collider)
     {
         if(collider.tag == "Player")
@@ -26,4 +28,5 @@ public class  UpgradeDoubleJump: MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }

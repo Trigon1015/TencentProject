@@ -136,3 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 1704303582161885500}
+  Impact: {fileID: 6711686441257415988, guid: a304e93aab5be2044afcc377a7907524, type: 3}
