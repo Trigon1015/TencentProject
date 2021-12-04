@@ -2677,7 +2677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: L1R6
-  exitName: L1R1E1
+  exitName: L1R8E1
 --- !u!61 &664467428
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3269,6 +3269,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d71af0f197d06a4d8489e61f3970546, type: 3}
+--- !u!1 &1551936525
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1551936527}
+  - component: {fileID: 1551936526}
+  m_Layer: 0
+  m_Name: Entance2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1551936526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551936525}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67954b49129fe143b6d94a5581aab00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lastExitName: L1R8h
+--- !u!4 &1551936527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551936525}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.85, y: -2.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625345695
 GameObject:
   m_ObjectHideFlags: 0
@@ -3501,8 +3545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263f5514627d9d844a9f8234ec8e0089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: L1R0
-  exitName: L1R1E1
+  sceneToLoad: L1R8h
+  exitName: L1R8E2
 --- !u!61 &1970967544
 BoxCollider2D:
   m_ObjectHideFlags: 0

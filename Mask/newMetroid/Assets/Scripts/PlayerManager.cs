@@ -10,7 +10,7 @@ public class PlayerManager : MonoBehaviour
     public static Vector3 postion;
 
     //player attribute
-    public static float PlayerHP = 100f;
+    public static float PlayerHP = 5f;
     
     // Start is called before the first frame update
     void Start()

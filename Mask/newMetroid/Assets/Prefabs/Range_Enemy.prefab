@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefabs1: {fileID: 7036965092725687372, guid: f56b00376feb67e449fc24fd4dc5b016, type: 3}
+  death: {fileID: 3520532385397676803, guid: d8c664069e0566147b5671417a50adac, type: 3}
   FirePoints: {fileID: 3439233017180326459}
 --- !u!61 &3439233017655079065
 BoxCollider2D:
