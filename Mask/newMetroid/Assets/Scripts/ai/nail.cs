@@ -1,0 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class nail : MonoBehaviour
+{
+    
+    public AnimatorStateInfo time ;
+    public Rigidbody2D rb;
+    public GameObject Impact;
+    public GameObject nail2;
+    public Animator   nail1;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+    private void Update()
+    {
+        time = nail1.GetCurrentAnimatorStateInfo(0);
+        if (time.normalizedTime  >=.875)
+        {
+            nail2 .tag = "Bullet";
+            nail2.layer = 10;
+        }
+        if (time.normalizedTime >= .999)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D info)
+    {
+        
+
+        if (info.gameObject.tag == "Player")
+        {
+            PlayerManager.PlayerHP--;
+            //Debug.Log("HP"+PlayerManager.PlayerHP);
+
+
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
+
+        }
+
+        if (info.gameObject.tag == "Shield")
+        {
+
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
+
+        }
+
+
+
+
+
+    }
+}
