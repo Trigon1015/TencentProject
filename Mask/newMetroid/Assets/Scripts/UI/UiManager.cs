@@ -33,7 +33,11 @@ public class UiManager : MonoBehaviour
         
 
     }
-    
+    /*
+    public void Start(){
+        menu.SetActive(false);
+    }
+     */
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -41,7 +45,8 @@ public class UiManager : MonoBehaviour
 
     public void PauseGmae()
     {
-        menu.SetActive(true);
+        //menu.SetActive(true);
+        menu.SetActive(!menu.activeSelf);
         Time.timeScale = 0;
     }
 
