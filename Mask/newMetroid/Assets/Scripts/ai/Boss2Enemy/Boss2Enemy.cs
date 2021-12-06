@@ -19,9 +19,12 @@ public class Boss2Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
-    
+  private void OnDrawGizmos()
+    {
+       Gizmos.DrawWireSphere(attackPoint.position, attackArea);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -52,6 +55,7 @@ public class Boss2Enemy : MonoBehaviour
         if (Physics2D.OverlapCircle(attackPoint .position, attackArea , targetLayer))
         {
             int modelindex = Random.Range(0, 8);
+            Debug.Log(modelindex);
             if (modelindex==0)
             {
                 animator.Play("1");
