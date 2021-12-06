@@ -50,7 +50,7 @@ public class Boss2Enemy : MonoBehaviour
         {
 
             PlayerManager.PlayerHP--;
-            Debug.Log(PlayerManager.PlayerHP);
+           
         }
         if (Physics2D.OverlapCircle(attackPoint .position, attackArea , targetLayer))
         {
