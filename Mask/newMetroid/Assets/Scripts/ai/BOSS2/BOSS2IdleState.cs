@@ -29,28 +29,7 @@ public class Boss2IdleState : BossIstate2//Õ¾Á¢×´Ì¬
         {
             Bossmanager.TransitionState(BossStateType2.BossChase);
             timer = 0;
-            
-            //if (modelindex==0)
-            //{
-            //    Bossmanager.TransitionState(BossStateType.BossIdle);
-            //    Debug.Log("Õ¾Á¢");
-            //}
-            //if (modelindex ==1)
-            //{
-            //    Bossmanager.TransitionState(BossStateType.BossChase);
-            //    Debug.Log("×·»÷");
-            //}
-            //if (modelindex == 2)
-            //{
-            //    Bossmanager.TransitionState(BossStateType.BossCharge);
-            //    Debug.Log("³å·æ");
-            //}
-            //if (modelindex ==3)
-            //{
-            //    Bossmanager.TransitionState(BossStateType.BossCharge);
-            //    Debug.Log("Í¶ÖÀ");
-            //}
-
+           
 
 
         }
@@ -70,6 +49,7 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
     private BOSS2FSM Bossmanager;
     private BossParameter2 parameter;
     private float timer;
+    public static int enemy=0;
     public Boss2ChaseState(BOSS2FSM Bossmanager)
     {
         this.Bossmanager = Bossmanager;
@@ -84,6 +64,19 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
 
     public void OnUpdate()
     {
+        if (parameter.health <10)
+        {
+            enemy = 1;
+        }
+        if (parameter.health < 6)
+        {
+            enemy = 2;
+        }
+        if (parameter.health < 2)
+        {
+            enemy = 3;
+        }
+
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
 
@@ -104,6 +97,7 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
     {
         Boss2ThrowState.nail = false;
         Boss2NailState.pail = false;
+        enemy = 0;
     }
 
 

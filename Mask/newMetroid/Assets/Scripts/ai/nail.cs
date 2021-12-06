@@ -40,7 +40,6 @@ public class nail : MonoBehaviour
 
 
             
-            Destroy(gameObject);
 
         }
 
@@ -48,7 +47,7 @@ public class nail : MonoBehaviour
         {
 
             
-            Destroy(gameObject);
+           
 
         }
 

@@ -40,7 +40,7 @@ public class pail : MonoBehaviour
 
 
 
-            Destroy(gameObject);
+            
 
         }
 
@@ -48,7 +48,7 @@ public class pail : MonoBehaviour
         {
 
 
-           Destroy(gameObject);
+           
 
         }
 

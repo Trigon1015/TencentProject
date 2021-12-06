@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 8188657577059084479}
   - component: {fileID: 3035954932468363510}
   - component: {fileID: 1758838601485684915}
+  - component: {fileID: 2249271325693471993}
   m_Layer: 0
   m_Name: BOSS2
   m_TagString: Untagged
@@ -198,3 +199,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2249271325693471993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2637124920347877884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9eff444984cdfcc47866ad9acd834e58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 595824699445232674}
+  point: {fileID: 0}
+  active: 1
+  active1: 1
+  active2: 1
