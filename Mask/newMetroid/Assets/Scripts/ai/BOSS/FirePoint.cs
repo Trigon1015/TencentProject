@@ -31,6 +31,7 @@ public class FirePoint : MonoBehaviour
             {
 
                 attack();
+               
                 attackSpeed = 2;
             }
 

@@ -4,29 +4,35 @@ using UnityEngine;
 using System;
 public enum BossStateType2
 {
-    BossIdle, BossChase, BossCharge, BossThrow
+    BossIdle, BossChase, BossCharge, BossThrow,nail,enemy
 }
 [Serializable]
 public class BossParameter2
 {
     public int health;
-    public float throwSpeed;
+    //public float throwSpeed;
     public float chaseSpeed;
-    public float throwtime;
+   // public float throwtime;
     public float idleTime;
-    public float chargeSpeed;
+    //public float chargeSpeed;
     public Animator animator;
     public Transform target;
     public LayerMask targetLayer;
-    public Transform attackPoint;
-    public float attackArea;
+    //public Transform attackPoint;
+    //public float attackArea;
     public Transform enemy;
     public float enemyvalue;
-    public float attackSpeed = 3;
-    public bool shoot = false;
-    public GameObject bulletPrefabs;
-    public UnityEngine.Transform BossFirepoint;
+   // public float attackSpeed = 3;
+    //public bool shoot = false;
+    //public GameObject nailPrefabs;
+    //public GameObject pailPrefabs;
+    
     public Rigidbody2D rb;
+    //public bool nail;
+   // public bool pail;
+    
+    //public UnityEngine.Transform nailFirepoint;
+    //public UnityEngine.Transform pailFirepoint;
 }
 
 public class BOSS2FSM : MonoBehaviour
@@ -41,9 +47,11 @@ public class BOSS2FSM : MonoBehaviour
     void Start()//添加各状态到字典
     {
         states.Add(BossStateType2.BossIdle, new Boss2IdleState(this));
-        //states.Add(BossStateType2.BossChase, new BossChaseState(this));
-        //states.Add(BossStateType2.BossCharge, new BossChargeState(this));
-        //states.Add(BossStateType2.BossThrow, new BossThrowState(this));
+        states.Add(BossStateType2.BossChase, new Boss2ChaseState(this));
+        states.Add(BossStateType2.BossCharge, new Boss2ChargeState(this));
+        states.Add(BossStateType2.BossThrow, new Boss2ThrowState(this));
+        states.Add(BossStateType2.nail, new Boss2NailState(this));
+        states.Add(BossStateType2.enemy , new Boss2EnemyState(this));
         TransitionState(BossStateType2.BossIdle);
 
         parameter.animator = GetComponent<Animator>();
@@ -56,10 +64,7 @@ public class BOSS2FSM : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        if (parameter.shoot == true)
-        {
-            Instantiate(parameter.bulletPrefabs, parameter.BossFirepoint.position, parameter.BossFirepoint.rotation);
-        }
+       
 
     }
     public void FlipTO(Transform target)//使怪物朝向正常
@@ -68,13 +73,13 @@ public class BOSS2FSM : MonoBehaviour
         {
             if (transform.position.x > target.position.x)
             {
-                transform.localScale = new Vector3(-2, 2, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
                 right = false;
 
             }
             else if (transform.position.x < target.position.x)
             {
-                transform.localScale = new Vector3(2, 2, 1);
+                transform.localScale = new Vector3(1, 1, 1);
                 right = true;
             }
         }

@@ -5,8 +5,7 @@ using UnityEngine;
 public class pail : MonoBehaviour
 {
     public AnimatorStateInfo time;
-    public Rigidbody2D rb;
-    public GameObject Impact;
+  
     public GameObject nail2;
     public Animator nail1;
 
@@ -22,6 +21,7 @@ public class pail : MonoBehaviour
         {
             nail2.tag = "Bullet";
             nail2.layer = 10;
+            
         }
         if (time.normalizedTime >= .999)
         {
@@ -39,7 +39,7 @@ public class pail : MonoBehaviour
             //Debug.Log("HP"+PlayerManager.PlayerHP);
 
 
-            Instantiate(Impact, transform.position, transform.rotation);
+
             Destroy(gameObject);
 
         }
@@ -47,8 +47,8 @@ public class pail : MonoBehaviour
         if (info.gameObject.tag == "Shield")
         {
 
-            Instantiate(Impact, transform.position, transform.rotation);
-            Destroy(gameObject);
+
+           Destroy(gameObject);
 
         }
 

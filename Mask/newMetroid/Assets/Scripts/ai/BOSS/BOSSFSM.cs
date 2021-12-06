@@ -22,10 +22,10 @@ public class BossParameter
     public float attackArea;
     public Transform enemy;
     public float enemyvalue;
-    public float attackSpeed = 3;
-    public bool shoot = false;
-    public GameObject bulletPrefabs;
-    public UnityEngine.Transform BossFirepoint;
+    //public float attackSpeed = 3;
+    //public bool shoot = false;
+  
+    
     public Rigidbody2D rb;
 }
 
@@ -56,10 +56,7 @@ public class BOSSFSM : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        if (parameter .shoot ==true)
-        {
-            Instantiate(parameter.bulletPrefabs, parameter.BossFirepoint.position, parameter.BossFirepoint.rotation);
-        }
+        
         
     }
     public void FlipTO(Transform target)//使怪物朝向正常

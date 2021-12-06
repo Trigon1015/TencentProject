@@ -128,6 +128,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5134720396748049342, guid: 945c480f63e2e8245bd5a64f435d74ab, type: 3}
   m_PrefabInstance: {fileID: 1720286098}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &491512989 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3667426016862958988, guid: f318bce9839fee741a903cb089d8a1b4, type: 3}
+  m_PrefabInstance: {fileID: 7442304643471573330}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624187208
 GameObject:
   m_ObjectHideFlags: 0
@@ -5209,6 +5214,10 @@ PrefabInstance:
       propertyPath: parameter.rb
       value: 
       objectReference: {fileID: 1125487975}
+    - target: {fileID: 7442304643156542232, guid: f318bce9839fee741a903cb089d8a1b4, type: 3}
+      propertyPath: parameter.enemy
+      value: 
+      objectReference: {fileID: 491512989}
     - target: {fileID: 7442304643156542232, guid: f318bce9839fee741a903cb089d8a1b4, type: 3}
       propertyPath: parameter.target
       value: 
