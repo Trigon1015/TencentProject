@@ -161,7 +161,6 @@ MonoBehaviour:
   health: 1
   moveSpeed: 4
   animator: {fileID: 8879637606812048252}
-  target: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -170,6 +169,8 @@ MonoBehaviour:
   enemy: {fileID: 8879637606242385675}
   BossEnemy: {fileID: 8879637606812048253}
   enemyvalue: 1
+  target: {fileID: 0}
+  player: {fileID: 0}
 --- !u!95 &8879637606812048252
 Animator:
   serializedVersion: 3
@@ -180,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 8879637606812048253}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4e5741b5942710b43b5d149caff272e1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3a57627af07c12c40875958d0f646cdb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
