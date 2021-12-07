@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChangeWorld : MonoBehaviour
 {
+    public static bool canchange = false;
     // Start is called before the first frame update
     void Start()
     {
