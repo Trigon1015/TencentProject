@@ -13,7 +13,7 @@ public class ExitScene : MonoBehaviour
         {
             PlayerPrefs.SetString("LastExitName", exitName);
             SceneManager.LoadScene(sceneToLoad);
-
+            
         }
         
     }

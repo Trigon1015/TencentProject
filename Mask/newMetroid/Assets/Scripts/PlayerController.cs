@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     static public Vector2 player;
     public float movementSpeed = 5f;
     public GameObject Firepoint;
-    private float InputDirection;
+    public static float InputDirection = 0;
     float countdown = 1;
     float countSqaut = 1;
 
@@ -66,6 +66,9 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsBullet;
     public static float ShieldDurability = 100;
 
+    //ios platform
+    public Joystick joystick;
+
 
 
     // Start is called before the first frame update
@@ -76,12 +79,14 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         availableJumpsLeft = availableJumps;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        
    
         if (!isRunning || !isGrounded)
         {
@@ -152,7 +157,9 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
     
+
 
     private void UpdateAnimation()
     {
@@ -171,8 +178,11 @@ public class PlayerController : MonoBehaviour
     int i = 1;
     private void CheckInput()
     {
-       
-        InputDirection = Input.GetAxisRaw("Horizontal");
+        //PC
+        //InputDirection = Input.GetAxisRaw("Horizontal");
+
+        //ios
+        InputDirection = joystick.Horizontal;
         if (Input.GetButtonDown("Jump"))
         {
             Jump();

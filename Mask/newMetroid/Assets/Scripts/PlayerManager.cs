@@ -8,6 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance;
     public static Vector3 postion;
+    
 
     //player attribute
     public static float PlayerHP = 5f;
@@ -18,12 +19,16 @@ public class PlayerManager : MonoBehaviour
         
         if (instance != null)
         {
+            
             Destroy(gameObject);
+
         }
         else
         {
+            
             instance = this;
         }
+        
         DontDestroyOnLoad(gameObject);
     }
      void Update()
