@@ -18,9 +18,9 @@ public class PlayerController : MonoBehaviour
     public float lowJumpMultiplier;
     
 
-    static public int availableJumps = 1;
+    static public int availableJumps = 2;
     static public int availableJumpsLeft;
-    static public bool MaskUpgrade = false;
+    static public bool MaskUpgrade = true;
     static public bool MorphUpgrade = true;
 
 
@@ -72,7 +72,8 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick;
     public static int small=0;
     public static int sheild = 0;
-    
+    public static bool MaskH = false;
+    public static bool CastleUpgrade = false;
 
 
 
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isSmall);
+        Debug.Log(availableJumpsLeft);
         if(MorphUpgrade==true)
         {
             small = 1;
@@ -120,6 +121,7 @@ public class PlayerController : MonoBehaviour
         
 
         //面具3
+        if()
         Castle();
         
         //面具1
@@ -142,14 +144,14 @@ public class PlayerController : MonoBehaviour
         
         
         
-
+        
         if (!inverted)
         {
             if (rb.velocity.y < 0)
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if ((rb.velocity.y > 0) && (!Input.GetButton("Jump")))
+            else if ((rb.velocity.y > 0) && (Jumping.JisPressed)) //(!Input.GetButton("Jump")))
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
@@ -160,7 +162,7 @@ public class PlayerController : MonoBehaviour
             {
                 rb.velocity -= Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if ((rb.velocity.y < 0) && (!Input.GetButton("Jump")))
+            else if ((rb.velocity.y < 0) && (Jumping.JisPressed)) //(!Input.GetButton("Jump")))
             {
                 rb.velocity -= Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
@@ -209,8 +211,10 @@ public class PlayerController : MonoBehaviour
         //ios
 
 
+
+        //if (Input.GetButtonDown("Jump"))
+        if(Jumping.JisPressed)
         
-        if (Input.GetButtonDown("Jump"))
         {
             Jump();
             FindObjectOfType<AudioManager>().Play("JumpSound");
@@ -319,7 +323,7 @@ public class PlayerController : MonoBehaviour
     }
     
 
-    private void Jump()
+    public void Jump()
     {
 
         if (canJump)
@@ -328,13 +332,23 @@ public class PlayerController : MonoBehaviour
             if (!inverted)
             {
                 rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+
+                
+
+
             }
             else
             {
                 rb.velocity = new Vector2(rb.velocity.x, -jumpForce);
+
+                
+
             }
 
             availableJumpsLeft--;
+            //FindObjectOfType<AudioManager>().Play("JumpSound");
+            Jumping.JisPressed = false;
+
             isRunShooting = false;
         }
     }
@@ -484,14 +498,15 @@ public class PlayerController : MonoBehaviour
 
     }
     
-    private void Mask1()
+    public void Mask1()
     {
 
-        if (Input.GetKeyDown(KeyCode.F)&&MaskUpgrade)
-        //if (Input.GetKeyDown(KeyCode.F))
+        if (Mask.MisPressed&&MaskUpgrade&&MaskH)
+        
         {
 
             activate = !activate;
+            MaskH = false;
             //Debug.Log(activate);
         }
     }

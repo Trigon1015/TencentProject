@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
             if(Time .timeScale ==1)
             {   
                 //if (Input.GetButtonDown("Fire1"))
-                if(Shoot.SisPressed)
+                if(Shoot.SisPressed && !PlayerController.isSmall)
                 {
 
                     if(Shield.bullet != 0)
