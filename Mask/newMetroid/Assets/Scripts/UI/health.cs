@@ -17,6 +17,7 @@ public class health : MonoBehaviour
 
     public void Update()
     {
+
         switch (PlayerManager.PlayerMaxHP)
         {
             case 5:
@@ -139,9 +140,10 @@ public class health : MonoBehaviour
                     healthBar.transform.GetChild(11).gameObject.SetActive(true);
                     break;
             }
+        }
             if (PlayerManager.PlayerMaxHP == 5)
-            {
-                switch (PlayerManager.PlayerHP)
+        {
+            switch (PlayerManager.PlayerHP)
                 {
                
                     case 5:
@@ -234,6 +236,6 @@ public class health : MonoBehaviour
 
 
             }
-        }
+        
     }
 }

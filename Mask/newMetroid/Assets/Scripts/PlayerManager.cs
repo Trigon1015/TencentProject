@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
 
     //player attribute
     public static float PlayerHP = 5f;
-    public static float PlayerMaxHP = 5f;
+    public static float PlayerMaxHP = 6f;
     
     // Start is called before the first frame update
     void Start()
@@ -34,14 +34,18 @@ public class PlayerManager : MonoBehaviour
     }
      void Update()
     {
-        if(UiManager.isload ==false )
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            PlayerHP--;
+        }
+            if (UiManager.isload ==false )
         {
             postion = this.transform.position;
 
         }
         else
         {
-            this.transform.position=postion  ;
+            this.transform.position=postion ;
             UiManager.isload = false;
         }
        // Debug.Log(postion);
