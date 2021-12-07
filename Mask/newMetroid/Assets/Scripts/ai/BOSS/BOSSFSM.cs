@@ -22,6 +22,7 @@ public class BossParameter
     public float attackArea;
     public Transform enemy;
     public float enemyvalue;
+    public GameObject player;
 
     //public float attackSpeed = 3;
     //public bool shoot = false;
@@ -63,8 +64,9 @@ public class BOSSFSM : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        
-        
+        parameter.player = GameObject.FindGameObjectWithTag("Player");
+        parameter.target = parameter.player.transform;
+
     }
     public void FlipTO(Transform target)//使怪物朝向正常
     {

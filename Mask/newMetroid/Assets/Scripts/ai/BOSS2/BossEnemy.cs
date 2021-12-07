@@ -18,17 +18,17 @@ public class BossEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Boss2ChaseState.enemy ==1&&active==true )
+        if(Boss2ChaseState.hp <=9&&active==true )
         {
             Instantiate(enemy, point.position, point.rotation);
             active = false;
         }
-        if (Boss2ChaseState.enemy == 2 && active1 == true)
+        if (Boss2ChaseState.hp <= 6 && active1 == true)
         {
             Instantiate(enemy, point.position, point.rotation);
             active1 = false;
         }
-        if (Boss2ChaseState.enemy == 3 && active2 == true)
+        if (Boss2ChaseState.hp <= 3 && active2 == true)
         {
             Instantiate(enemy, point.position, point.rotation);
             active2 = false;

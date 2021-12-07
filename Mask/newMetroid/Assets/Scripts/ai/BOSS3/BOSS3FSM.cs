@@ -27,6 +27,7 @@ public class BossParameter3
     public GameObject bulletPrefabs;
     public UnityEngine.Transform BossFirepoint;
     public Rigidbody2D rb;
+    public GameObject player;
 }
 
 public class BOSS3FSM : MonoBehaviour
@@ -50,7 +51,7 @@ public class BOSS3FSM : MonoBehaviour
 
 
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
@@ -66,6 +67,8 @@ public class BOSS3FSM : MonoBehaviour
         {
             Instantiate(parameter.bulletPrefabs, parameter.BossFirepoint.position, parameter.BossFirepoint.rotation);
         }
+        parameter.player = GameObject.FindGameObjectWithTag("Player");
+        parameter.target = parameter.player.transform;
 
     }
     public void FlipTO(Transform target)//使怪物朝向正常

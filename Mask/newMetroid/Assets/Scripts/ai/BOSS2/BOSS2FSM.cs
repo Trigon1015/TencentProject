@@ -9,6 +9,9 @@ public enum BossStateType2
 [Serializable]
 public class BossParameter2
 {
+    //public GameObject player;
+    //public GameObject camera;
+    //public int i = 1;
     public int health;
     //public float throwSpeed;
     public float chaseSpeed;
@@ -28,6 +31,7 @@ public class BossParameter2
     //public GameObject pailPrefabs;
     
     public Rigidbody2D rb;
+    public GameObject player;
     //public bool nail;
    // public bool pail;
     
@@ -70,7 +74,8 @@ public class BOSS2FSM : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        
+        parameter.player = GameObject.FindGameObjectWithTag("Player");
+        parameter.target = parameter.player.transform;
 
     }
     public void FlipTO(Transform target)//使怪物朝向正常

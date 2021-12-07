@@ -54,6 +54,11 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
     private BossParameter2 parameter;
     private float timer;
     public static int enemy=0;
+    public static int change=0 ;
+    public bool active=true;
+    public bool active2 = true;
+    public bool active3 = true;
+    public static float hp=10;
     public Boss2ChaseState(BOSS2FSM Bossmanager)
     {
         this.Bossmanager = Bossmanager;
@@ -68,22 +73,37 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
 
     public void OnUpdate()
     {
+        hp = parameter.health; 
+        Debug.Log(enemy);
+        Debug.Log(change );
         if (parameter.health <= 0)
         {
             death.dead = true;
         }
-        if (parameter.health <10)
-        {
+        if (parameter.health <10&& active==true)
+        {active = false;
             enemy = 1;
+            change = 1;
+            Bossmanager.TransitionState(BossStateType2.enemy);
+            
+
         }
-        if (parameter.health < 6)
-        {
+        if (parameter.health < 6 && active2 == true)
+        {active2 = false;
             enemy = 2;
+            change = 2;
+            Bossmanager.TransitionState(BossStateType2.enemy);
+            
         }
-        if (parameter.health < 2)
-        {
+        if (parameter.health < 2 && active3 == true)
+        {active3 = false;
             enemy = 3;
+            change = 3;
+            Bossmanager.TransitionState(BossStateType2.enemy);
+            
         }
+        
+
 
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
@@ -250,6 +270,7 @@ public class Boss2EnemyState : BossIstate2//ÕÙ»½×´Ì¬
     private BOSS2FSM Bossmanager;
     private BossParameter2 parameter;
     private float timer;
+    public static int back=3;
     public Boss2EnemyState(BOSS2FSM Bossmanager)
     {
         this.Bossmanager = Bossmanager;
@@ -264,6 +285,11 @@ public class Boss2EnemyState : BossIstate2//ÕÙ»½×´Ì¬
 
     public void OnUpdate()
     {
+        if (GameObject.FindGameObjectWithTag("bossenemy") == null)
+        {
+            back ++;
+            Bossmanager.TransitionState(BossStateType2.BossChase);
+        }
         if (parameter.health <= 0)
         {
             death.dead = true;

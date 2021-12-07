@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5630368645274354323}
   m_Layer: 9
   m_Name: cell
-  m_TagString: Enemy
+  m_TagString: bossenemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

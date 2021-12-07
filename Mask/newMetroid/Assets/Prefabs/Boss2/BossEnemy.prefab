@@ -73,9 +73,10 @@ GameObject:
   - component: {fileID: 8879637606812048251}
   - component: {fileID: 8879637606812048252}
   - component: {fileID: 312459518219699278}
+  - component: {fileID: 4261069808842644618}
   m_Layer: 9
   m_Name: BossEnemy
-  m_TagString: Untagged
+  m_TagString: bossenemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,6 +173,7 @@ MonoBehaviour:
   enemyvalue: 1
   target: {fileID: 0}
   player: {fileID: 0}
+  bossdead: {fileID: 3520532385397676803, guid: d8c664069e0566147b5671417a50adac, type: 3}
 --- !u!95 &8879637606812048252
 Animator:
   serializedVersion: 3
@@ -204,3 +206,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossdead: {fileID: 3520532385397676803, guid: d8c664069e0566147b5671417a50adac, type: 3}
+--- !u!61 &4261069808842644618
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8879637606812048253}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.06728077, y: -0.93071413}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4, y: 4}
+    newSize: {x: 4, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.8786583, y: 1.7348886}
+  m_EdgeRadius: 0
