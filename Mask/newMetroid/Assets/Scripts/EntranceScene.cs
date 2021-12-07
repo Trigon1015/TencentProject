@@ -11,6 +11,7 @@ public class EntranceScene : MonoBehaviour
         if (PlayerPrefs.GetString("LastExitName") == lastExitName)
         {
             PlayerManager.instance.transform.position = transform.position;
+            
         }
     }
 

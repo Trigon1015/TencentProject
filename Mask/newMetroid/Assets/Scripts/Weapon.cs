@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     public GameObject BossbulletPrefabs;
     public GameObject CbulletPrefabs;
     public static int count = 4;
+    
 
     // Update is called once per frame
 
@@ -23,7 +24,8 @@ public class Weapon : MonoBehaviour
         {
             if(Time .timeScale ==1)
             {   
-                if (Input.GetButtonDown("Fire1"))
+                //if (Input.GetButtonDown("Fire1"))
+                if(Shoot.SisPressed)
                 {
 
                     if(Shield.bullet != 0)
@@ -35,7 +37,7 @@ public class Weapon : MonoBehaviour
                         Shield.bullet = 0;
                     }
                     
-                    Shoot();
+                    Shooting();
 
                     FindObjectOfType<AudioManager>().Play("Shooting");
                     
@@ -82,7 +84,7 @@ public class Weapon : MonoBehaviour
 
   
 
-    void Shoot()
+    void Shooting()
     {
         //shooting logic
         
@@ -148,10 +150,11 @@ public class Weapon : MonoBehaviour
             }
 
         }
-        
+        Shoot.SisPressed = false;
 
-        
-        
+
+
+
 
     }
 

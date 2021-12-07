@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     
@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     static public int availableJumps = 1;
     static public int availableJumpsLeft;
     static public bool MaskUpgrade = false;
-    static public bool MorphUpgrade = false;
+    static public bool MorphUpgrade = true;
 
 
     private bool inverted = false;
@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     static public bool isShootingUp;
     static public bool hurtplayer;
     static public bool isCrouchShooting;
+    static public bool isSmall;
     
     static public float HurtTime = 0;
     public Rigidbody2D rb;
@@ -67,10 +68,11 @@ public class PlayerController : MonoBehaviour
     public static float ShieldDurability = 100;
 
     //ios platform
+    //public Joystick joystick;
     public Joystick joystick;
-
     public static int small=0;
     public static int sheild = 0;
+    
 
 
 
@@ -84,12 +86,14 @@ public class PlayerController : MonoBehaviour
         availableJumpsLeft = availableJumps;
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isSmall);
         if(MorphUpgrade==true)
         {
             small = 1;
@@ -171,8 +175,8 @@ public class PlayerController : MonoBehaviour
         CheckIfCanJump();
         AnimationContoller();
         
-        
-        
+
+
 
 
 
@@ -200,32 +204,39 @@ public class PlayerController : MonoBehaviour
     private void CheckInput()
     {
         //PC
-        InputDirection = Input.GetAxisRaw("Horizontal");
+        //InputDirection = Input.GetAxisRaw("Horizontal");
 
         //ios
-        //InputDirection = joystick.Horizontal;
+
+
+        
         if (Input.GetButtonDown("Jump"))
         {
             Jump();
             FindObjectOfType<AudioManager>().Play("JumpSound");
 
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        //if (Input.GetKeyDown(KeyCode.S))
+        if(Down.DisPressed)
         {
             isCrouching = true;
             isShootingUp = false;
-
-
+            
         }
+
         
 
 
-        if (Input.GetKeyDown(KeyCode.W))
+
+            //if (Input.GetKeyDown(KeyCode.W))
+        if (Up.UisPressed)
         {
             if(isCrouching)
             {
                 isCrouching = false;
+                
             }
+            
             else 
             {
                 isShootingUp = true;
@@ -234,20 +245,23 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
         if (Input.GetKeyDown(KeyCode.X))
         {
             isTalking =!isTalking ;
             Debug.Log(isTalking);
         }
 
-        if (Input.GetKeyDown(KeyCode.A))
+        //if (Input.GetKeyDown(KeyCode.A))
+        if (Left.LisPressed)
         {
             isCrouching = false;
             isShootingUp = false;
 
         }
 
-        if (Input.GetKeyDown(KeyCode.D))
+        //if (Input.GetKeyDown(KeyCode.D))
+        if(Right.RisPressed)
         {
             isCrouching = false;
             isShootingUp = false;
@@ -273,23 +287,34 @@ public class PlayerController : MonoBehaviour
         {
             capsuleCollider.size = new Vector2(ColliderSizeX, ColliderSizeY);
         }
-        if (Input.GetKeyDown(KeyCode.U)&&MorphUpgrade)
+        //if (Input.GetKeyDown(KeyCode.U)&&MorphUpgrade)
+        if (Down.Small && MorphUpgrade)
         {
-            i++;
+            //i++;
 
-            if (i%2==0)
-            {
+           // if (i%2==0)
+            //{
                 transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+                isSmall = true;
                 
-            }
-            if (i%2==1&&SmallCheck.CanSamll ==true  )
-            {
-                transform.localScale = new Vector3(5f, 5f, 5f);
-                transform.localPosition += new Vector3(0, 0.3f, 0);
-            }
+            //}
+            
             
             
         }
+        if(isSmall&& Up.UisPressed)
+        {
+            //if (i % 2 == 1 && SmallCheck.CanSamll == true)
+            if (SmallCheck.CanSamll == true)
+            {
+                transform.localScale = new Vector3(5f, 5f, 5f);
+                transform.localPosition += new Vector3(0, 0.3f, 0);
+                isSmall = false;
+                isCrouching = true;
+            }
+        }
+
+        
 
     }
     

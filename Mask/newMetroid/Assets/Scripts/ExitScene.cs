@@ -12,6 +12,7 @@ public class ExitScene : MonoBehaviour
     {if(collision.tag =="Player")
         {
             PlayerPrefs.SetString("LastExitName", exitName);
+            
             SceneManager.LoadScene(sceneToLoad);
             
         }
