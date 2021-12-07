@@ -11,6 +11,7 @@ public class ChangeWorld : MonoBehaviour
     public static bool active4 = false;
     public static bool active5 = false;
     public static bool active6 = false;
+    public static int change = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +81,7 @@ public class ChangeWorld : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.L ) )
+        if (Input.GetKeyDown(KeyCode.L ) &&change==1)
         {
             if (ChangeWorldCheck.ischanged == false)
             {

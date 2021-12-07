@@ -28,6 +28,7 @@ public class BossParameter3
     public UnityEngine.Transform BossFirepoint;
     public Rigidbody2D rb;
     public GameObject player;
+    public GameObject boss;
 }
 
 public class BOSS3FSM : MonoBehaviour
@@ -62,6 +63,12 @@ public class BOSS3FSM : MonoBehaviour
 
     void Update()
     {
+        if (parameter.health <= 4)
+        {
+            ChangeWorld.change = 1;
+            parameter.boss.layer = 1;  
+
+        }
         currentState.OnUpdate();
         if (parameter.shoot == true)
         {

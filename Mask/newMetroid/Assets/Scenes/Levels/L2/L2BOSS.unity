@@ -2751,6 +2751,11 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &430294168 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5134720396748049332, guid: 945c480f63e2e8245bd5a64f435d74ab, type: 3}
+  m_PrefabInstance: {fileID: 1758012391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &557731732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3284,9 +3289,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fa577078bfbbf04f8edfaa9b0ba9c9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5134720396748049332, guid: 945c480f63e2e8245bd5a64f435d74ab, type: 3}
+  player: {fileID: 430294168}
   scrollMultiplier: 1.8
-  movementWindowSize: {x: 8, y: 6}
+  movementWindowSize: {x: 8, y: -8}
   windowOffset: {x: 0, y: 0}
   limitCameraMovement: 0
   limitLeft: 0
