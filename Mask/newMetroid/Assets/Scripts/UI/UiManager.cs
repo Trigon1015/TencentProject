@@ -67,7 +67,7 @@ public class UiManager : MonoBehaviour
         {
             SceneManager.LoadScene(scene);
 
-            Debug.Log("1");
+
         }
         Time.timeScale = 1;
         loadhealth();
@@ -75,10 +75,10 @@ public class UiManager : MonoBehaviour
         X();
         Y();
         Z();
-
-
+        loadjump();
+        loadsheild();
         LoadPosition();
-        Debug.Log("2");
+        
 
     }
     public void LoadGame()
@@ -89,7 +89,7 @@ public class UiManager : MonoBehaviour
         {
             SceneManager.LoadScene(scene);
             
-            Debug.Log("1");
+            
         }
         ResumeGame();
         loadhealth();
@@ -100,9 +100,9 @@ public class UiManager : MonoBehaviour
         
         
        LoadPosition();
-        Debug.Log("2");
-        
 
+        Debug.Log(PlayerPrefs.GetInt("small"));
+        Debug.Log(PlayerController.small);
     }
     public void LoadPosition()
     {
@@ -111,12 +111,14 @@ public class UiManager : MonoBehaviour
     }
     public void savedata()
     {
-        PlayerPrefs.SetFloat("playerhealth", PlayerManager.PlayerHP);
+        PlayerPrefs.SetFloat("playerhealth", PlayerManager.PlayerMaxHP);
         PlayerPrefs.SetInt("scene", SceneManager.GetActiveScene().buildIndex);
         PlayerPrefs.SetFloat("x", xx);
         PlayerPrefs.SetFloat("y", yy);
         PlayerPrefs.SetFloat("z", zz);Debug.Log(xx);
         PlayerPrefs.SetInt("small", PlayerController.small);
+        PlayerPrefs.SetInt("jump", PlayerController.availableJumps);
+        PlayerPrefs.SetInt("sheild", PlayerController.sheild );
     }
 
     private void Update()
@@ -129,10 +131,7 @@ public class UiManager : MonoBehaviour
 
     public float loadhealth()
     {
-        if (PlayerPrefs.HasKey("playerhealth"))
-        {
-            PlayerPrefs.SetFloat("playerhealth", 100f);
-        }
+        
         PlayerManager.PlayerHP = PlayerPrefs.GetFloat("playerhealth");
         return PlayerManager.PlayerHP;
 
@@ -141,6 +140,16 @@ public class UiManager : MonoBehaviour
     {
         PlayerController.small= PlayerPrefs.GetInt("small");
         return PlayerController.small;
+    }
+    public int loadjump()
+    {
+        PlayerController.availableJumps  = PlayerPrefs.GetInt("jump");
+        return PlayerController.availableJumps;
+    }
+    public int loadsheild()
+    {
+        PlayerController.sheild = PlayerPrefs.GetInt("jump");
+        return PlayerController.sheild;
     }
     public int loadscene()
     {

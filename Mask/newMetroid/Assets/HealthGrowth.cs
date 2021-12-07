@@ -11,7 +11,7 @@ public class HealthGrowth : MonoBehaviour
     {
 
         playerPosition = GameObject.Find("Player 1").transform;
-        if (PlayerManager.PlayerHP == 6f)
+        if (PlayerManager.PlayerMaxHP == 6f)
         {
             Destroy(gameObject);
         }
@@ -24,6 +24,7 @@ public class HealthGrowth : MonoBehaviour
         if (collider.tag == "Player")
         {
             PlayerManager.PlayerHP = 6f;
+            PlayerManager.PlayerMaxHP = 6f;
             Instantiate(upgradeEffects, playerPosition);
             Destroy(gameObject);
         }

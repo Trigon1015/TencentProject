@@ -28,6 +28,10 @@ public class Boss2Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <=0)
+        {
+            death.dead = true;
+        }
         player=GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         if (target != null)
