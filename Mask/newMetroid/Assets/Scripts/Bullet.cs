@@ -48,8 +48,21 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
 
         }
-       
-        
+        if (info.gameObject.tag == "Enemy")
+        {
+
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
+
+        }
+        if (info.gameObject.tag == "boss")
+        {
+
+            Instantiate(Impact, transform.position, transform.rotation);
+            Destroy(gameObject);
+
+        }
+
 
 
 

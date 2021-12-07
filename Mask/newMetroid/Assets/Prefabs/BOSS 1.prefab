@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
-    health: 1
+    health: 10
     throwSpeed: 0
     chaseSpeed: 4
     throwtime: 0

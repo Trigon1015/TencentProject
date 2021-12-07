@@ -22,6 +22,7 @@ public class BossParameter
     public float attackArea;
     public Transform enemy;
     public float enemyvalue;
+
     //public float attackSpeed = 3;
     //public bool shoot = false;
   
@@ -51,8 +52,14 @@ public class BOSSFSM : MonoBehaviour
 
     }
 
-  
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            parameter.health--;
+        }
+    }
     void Update()
     {
         currentState.OnUpdate();

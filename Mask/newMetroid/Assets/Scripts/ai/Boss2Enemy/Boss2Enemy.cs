@@ -16,23 +16,35 @@ public class Boss2Enemy : MonoBehaviour
     public float enemyvalue;
     public Transform target;
     public GameObject player;
+    public GameObject bossdead;
     // Start is called before the first frame update
     void Start()
     {
       
     }
-  private void OnDrawGizmos()
+    //private void OnDrawGizmos()
+    //  {
+    //     Gizmos.DrawWireSphere(attackPoint.position, attackArea);
+    //  }
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-       Gizmos.DrawWireSphere(attackPoint.position, attackArea);
+        if (collision.tag == "Bullet")
+        {
+            health--;
+            Debug.Log(health);
+        }
     }
     // Update is called once per frame
     void Update()
     {
-        if(health <=0)
+
+        if (health <= 0)
         {
-            death.dead = true;
+            Instantiate(bossdead, transform.position, transform.rotation);
+
+            gameObject.SetActive(false);
         }
-        player=GameObject.FindGameObjectWithTag("Player");
+        player =GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         if (target != null)
         {
@@ -59,7 +71,7 @@ public class Boss2Enemy : MonoBehaviour
         if (Physics2D.OverlapCircle(attackPoint .position, attackArea , targetLayer))
         {
             int modelindex = Random.Range(0, 8);
-            Debug.Log(modelindex);
+            
             if (modelindex==0)
             {
                 animator.Play("1");

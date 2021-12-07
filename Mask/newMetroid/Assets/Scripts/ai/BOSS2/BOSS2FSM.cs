@@ -59,12 +59,18 @@ public class BOSS2FSM : MonoBehaviour
 
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            parameter.health--;
+        }
+    }
 
     void Update()
     {
         currentState.OnUpdate();
-       
+        
 
     }
     public void FlipTO(Transform target)//使怪物朝向正常

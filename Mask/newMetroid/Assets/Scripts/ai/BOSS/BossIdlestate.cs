@@ -25,6 +25,7 @@ public class BossIdleState : BossIState//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+
         if(parameter.health <=0 )
         {
             death.dead = true;
