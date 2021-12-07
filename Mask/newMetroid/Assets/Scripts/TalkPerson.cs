@@ -5,11 +5,13 @@ using UnityEngine;
 public class TalkPerson : MonoBehaviour
 {
     public GameObject NPC;
-    private float time;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player") && PlayerController.isTalking == true)
+    
+    public void OnTriggerStay2D(Collider2D collider)
+    {Debug.Log("1");
+       
+        if (collider.tag=="Player" && PlayerController.isTalking == true)
         {
+            
             NPC.SetActive(true);
 
         }
