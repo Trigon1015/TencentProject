@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
     //ios platform
     public Joystick joystick;
 
+    public static int small=0;
+
 
 
     // Start is called before the first frame update
@@ -86,7 +88,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(MorphUpgrade==true)
+        {
+            small = 1;
+        }
+        if(small==1)
+        {
+            MorphUpgrade = true;
+        }
+
    
         if (!isRunning || !isGrounded)
         {

@@ -21,6 +21,10 @@ public class Boss2IdleState : BossIstate2//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+        if(parameter .health <=0)
+        {
+            death .dead =true;
+        }
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
         //int modelindex = Random.Range(0, 4);
@@ -64,6 +68,10 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         if (parameter.health <10)
         {
             enemy = 1;
@@ -125,7 +133,11 @@ public class Boss2ChargeState : BossIstate2//ÅÐ¶Ï×´Ì¬
 
     public void OnUpdate()
     {
-        if(modelindex==0)
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
+        if (modelindex==0)
         {
             Bossmanager.TransitionState(BossStateType2.BossThrow);
         }
@@ -166,6 +178,10 @@ public class Boss2ThrowState : BossIstate2//Ë®Í°×´Ì¬
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         time = parameter .animator .GetCurrentAnimatorStateInfo(0);
         Bossmanager.FlipTO(parameter.target);
         if(time.normalizedTime >= .999)
@@ -205,6 +221,10 @@ public class Boss2NailState : BossIstate2//Í¼¶¤×´Ì¬
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         time = parameter.animator.GetCurrentAnimatorStateInfo(0);
         Bossmanager.FlipTO(parameter.target);
         if (time.normalizedTime >= .999)
@@ -244,6 +264,10 @@ public class Boss2EnemyState : BossIstate2//ÕÙ»½×´Ì¬
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         Bossmanager.FlipTO(parameter.target);
     }
     public void OnExit()

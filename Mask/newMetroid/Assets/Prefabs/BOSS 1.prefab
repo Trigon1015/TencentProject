@@ -128,6 +128,7 @@ GameObject:
   - component: {fileID: 7442304643156542235}
   - component: {fileID: 7442304643156542234}
   - component: {fileID: 7442304643156542237}
+  - component: {fileID: 3345121157722968390}
   m_Layer: 13
   m_Name: BOSS 1
   m_TagString: Untagged
@@ -269,10 +270,7 @@ MonoBehaviour:
     attackArea: 0
     enemy: {fileID: 0}
     enemyvalue: 10
-    attackSpeed: 3
-    shoot: 0
-    bulletPrefabs: {fileID: 0}
-    BossFirepoint: {fileID: 0}
+    rb: {fileID: 0}
 --- !u!114 &7442304643156542235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +322,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3345121157722968390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7442304643156542229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53b5bff6e416d7e49abd53fa011a5944, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossdead: {fileID: 3520532385397676803, guid: d8c664069e0566147b5671417a50adac, type: 3}
 --- !u!1 &7442304643430838074
 GameObject:
   m_ObjectHideFlags: 0

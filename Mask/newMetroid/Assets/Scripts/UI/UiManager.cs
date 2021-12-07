@@ -62,6 +62,7 @@ public class UiManager : MonoBehaviour
     public void Load()
     {
         loadscene();
+        loadsmall();
         if (SceneManager.GetActiveScene().buildIndex > scene || SceneManager.GetActiveScene().buildIndex < scene)
         {
             SceneManager.LoadScene(scene);
@@ -115,7 +116,7 @@ public class UiManager : MonoBehaviour
         PlayerPrefs.SetFloat("x", xx);
         PlayerPrefs.SetFloat("y", yy);
         PlayerPrefs.SetFloat("z", zz);Debug.Log(xx);
-       
+        PlayerPrefs.SetInt("small", PlayerController.small);
     }
 
     private void Update()
@@ -135,6 +136,11 @@ public class UiManager : MonoBehaviour
         PlayerManager.PlayerHP = PlayerPrefs.GetFloat("playerhealth");
         return PlayerManager.PlayerHP;
 
+    }
+    public int loadsmall()
+    {
+        PlayerController.small= PlayerPrefs.GetInt("small");
+        return PlayerController.small;
     }
     public int loadscene()
     {

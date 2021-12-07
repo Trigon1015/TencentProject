@@ -25,7 +25,10 @@ public class BossIdleState : BossIState//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
-        
+        if(parameter.health <=0 )
+        {
+            death.dead = true;
+        }
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
         //int modelindex = Random.Range(0, 4);
@@ -117,6 +120,10 @@ public class BossChaseState : BossIState
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         if (BossShield1.Boss2 == true)
         {
             Bossmanager.TransitionState(BossStateType.BossCharge);
@@ -188,6 +195,10 @@ public class BossChargeState : BossIState
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         Bossmanager.FlipTO(parameter.target);
         if(parameter .health <=20)
         { jumptime += Time.deltaTime;
@@ -266,6 +277,10 @@ public class BossThrowState : BossIState
 
     public void OnUpdate()
     {
+        if (parameter.health <= 0)
+        {
+            death.dead = true;
+        }
         if (BossShield1.Boss2 == true)
         {
             Bossmanager.TransitionState(BossStateType.BossCharge);
