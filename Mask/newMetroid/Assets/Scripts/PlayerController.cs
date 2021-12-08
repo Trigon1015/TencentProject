@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
 
     static public int availableJumps = 1;
     static public int availableJumpsLeft;
-    static public bool MaskUpgrade = true;
-    static public bool MorphUpgrade = true;
+    static public bool MaskUpgrade = false;
+    static public bool MorphUpgrade = false;
 
 
     private bool inverted = false;

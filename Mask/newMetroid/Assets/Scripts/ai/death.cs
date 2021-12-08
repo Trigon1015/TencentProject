@@ -19,6 +19,7 @@ public class death : MonoBehaviour
         {
             Instantiate(bossdead, transform.position, transform.rotation);
             dead = false;
+            
             gameObject.SetActive(false);
         }
     }

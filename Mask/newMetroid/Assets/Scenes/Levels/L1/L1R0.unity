@@ -801,19 +801,19 @@ PrefabInstance:
       objectReference: {fileID: -7777210716476430392, guid: 8719c4aa711d2244982a921688d5b1a8, type: 2}
     - target: {fileID: 1253416051, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 772
+      value: 1183
       objectReference: {fileID: 0}
     - target: {fileID: 1253416051, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 242
+      value: 282
       objectReference: {fileID: 0}
     - target: {fileID: 1286008200, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 844
+      value: 1205
       objectReference: {fileID: 0}
     - target: {fileID: 1286008200, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 94
+      value: 87
       objectReference: {fileID: 0}
     - target: {fileID: 1641178814, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_sharedMaterial
@@ -821,11 +821,11 @@ PrefabInstance:
       objectReference: {fileID: -7777210716476430392, guid: 8719c4aa711d2244982a921688d5b1a8, type: 2}
     - target: {fileID: 1773541121, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 711
+      value: 1025
       objectReference: {fileID: 0}
     - target: {fileID: 1773541121, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 93
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 1884520529, guid: e8b82d66b3c1227468202dceaf978b0c, type: 3}
       propertyPath: m_sharedMaterial
@@ -2993,7 +2993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 263f5514627d9d844a9f8234ec8e0089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: L1R1
+  sceneToLoad: L1R01F
   exitName: L1R0E1
 --- !u!61 &1227628417
 BoxCollider2D:
