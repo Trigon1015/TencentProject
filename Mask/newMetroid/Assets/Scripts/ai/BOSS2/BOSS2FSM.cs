@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public enum BossStateType2
 {
-    BossIdle, BossChase, BossCharge, BossThrow,nail,enemy
+    BossIdle, BossChase, BossCharge, BossThrow, nail, enemy
 }
 [Serializable]
 public class BossParameter2
@@ -15,7 +15,7 @@ public class BossParameter2
     public int health;
     //public float throwSpeed;
     public float chaseSpeed;
-   // public float throwtime;
+    // public float throwtime;
     public float idleTime;
     //public float chargeSpeed;
     public Animator animator;
@@ -25,16 +25,16 @@ public class BossParameter2
     //public float attackArea;
     public Transform enemy;
     public float enemyvalue;
-   // public float attackSpeed = 3;
+    // public float attackSpeed = 3;
     //public bool shoot = false;
     //public GameObject nailPrefabs;
     //public GameObject pailPrefabs;
-    
+
     public Rigidbody2D rb;
     public GameObject player;
     //public bool nail;
-   // public bool pail;
-    
+    // public bool pail;
+
     //public UnityEngine.Transform nailFirepoint;
     //public UnityEngine.Transform pailFirepoint;
 }
@@ -55,7 +55,7 @@ public class BOSS2FSM : MonoBehaviour
         states.Add(BossStateType2.BossCharge, new Boss2ChargeState(this));
         states.Add(BossStateType2.BossThrow, new Boss2ThrowState(this));
         states.Add(BossStateType2.nail, new Boss2NailState(this));
-        states.Add(BossStateType2.enemy , new Boss2EnemyState(this));
+        states.Add(BossStateType2.enemy, new Boss2EnemyState(this));
         TransitionState(BossStateType2.BossIdle);
 
         parameter.animator = GetComponent<Animator>();

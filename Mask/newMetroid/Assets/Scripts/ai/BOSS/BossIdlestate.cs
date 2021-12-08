@@ -26,7 +26,7 @@ public class BossIdleState : BossIState//Õ¾Á¢×´Ì¬
     public void OnUpdate()
     {
 
-        if(parameter.health <=0 )
+        if (parameter.health <= 0)
         {
             death.dead = true;
         }
@@ -67,31 +67,31 @@ public class BossIdleState : BossIState//Õ¾Á¢×´Ì¬
 
         }
 
-            
-            
 
-            
 
-       
-            
 
-           
-       
+
+
+
+
+
+
+
 
     }
     public void OnExit()
     {
-       
+
     }
 
 
 
 
 }
-   
-    
 
-   
+
+
+
 
 
 
@@ -101,17 +101,17 @@ public class BossChaseState : BossIState
     private BOSSFSM Bossmanager;
     private BossParameter parameter;
     private float timer = 0;
-    
 
-    
+
+
 
     public BossChaseState(BOSSFSM manager)
     {
         this.Bossmanager = manager;
         this.parameter = manager.parameter;
-        
+
     }
-    
+
     public void OnEnter()
     {
         parameter.animator.Play("walk");
@@ -131,8 +131,8 @@ public class BossChaseState : BossIState
         }
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
-        
-        if (timer<=10)
+
+        if (timer <= 10)
         {
             //manager.transform.up = parameter.target.position - manager.transform.position;
             Bossmanager.transform.position = Vector2.MoveTowards(Bossmanager.transform.position,
@@ -141,22 +141,22 @@ public class BossChaseState : BossIState
         if (Physics2D.OverlapCircle(parameter.attackPoint.position, parameter.attackArea, parameter.targetLayer))//Íæ¼Ò½øÈë¹¥»÷·¶Î§
         {
 
-            Bossmanager.TransitionState(BossStateType.BossThrow );
+            Bossmanager.TransitionState(BossStateType.BossThrow);
 
         }
-        if (timer>10)
+        if (timer > 10)
         {
             Bossmanager.TransitionState(BossStateType.BossThrow);
             timer = 0;
         }
-       
-        
+
+
     }
 
-    
+
     public void OnExit()
     {
-        
+
     }
 }
 
@@ -167,7 +167,7 @@ public class BossChargeState : BossIState
     private float timer = 0;
     private bool right;
     public float jumptime = 0;
-    public int  modelindex = 0;
+    public int modelindex = 0;
     public BossChargeState(BOSSFSM Bossmanager)
     {
         this.Bossmanager = Bossmanager;
@@ -192,7 +192,7 @@ public class BossChargeState : BossIState
 
     }
 
-    
+
 
     public void OnUpdate()
     {
@@ -201,28 +201,29 @@ public class BossChargeState : BossIState
             death.dead = true;
         }
         Bossmanager.FlipTO(parameter.target);
-        if(parameter .health <=20)
-        { jumptime += Time.deltaTime;
-            if (jumptime >2&&BOSSFSM .right ==true)
+        if (parameter.health <= 20)
+        {
+            jumptime += Time.deltaTime;
+            if (jumptime > 2 && BOSSFSM.right == true)
             {
-                parameter.rb.velocity  = new Vector2(6, 12);
+                parameter.rb.velocity = new Vector2(6, 12);
                 jumptime = 0;
-                 
+
             }
             if (jumptime > 2 && BOSSFSM.right == false)
             {
                 parameter.rb.velocity = new Vector2(-6, 12);
                 jumptime = 0;
-                 
+
             }
 
             Bossmanager.transform.position = Vector2.MoveTowards(Bossmanager.transform.position,
         parameter.target.position, parameter.chaseSpeed * Time.deltaTime);
 
         }
-           
-        
-        if(parameter .health >=20)
+
+
+        if (parameter.health >= 20)
         {
             timer += Time.deltaTime;
 
@@ -244,16 +245,16 @@ public class BossChargeState : BossIState
             }
 
         }
-              
-            
-       
-        
+
+
+
+
     }
 
     public void OnExit()
     {
-        
-       
+
+
     }
 }
 
@@ -262,7 +263,7 @@ public class BossThrowState : BossIState
     private BOSSFSM Bossmanager;
     private BossParameter parameter;
     public static bool attack;
-    private float timer=0;
+    private float timer = 0;
 
     public BossThrowState(BOSSFSM Bossmanager)
     {
@@ -290,7 +291,7 @@ public class BossThrowState : BossIState
         Bossmanager.FlipTO(parameter.target);
         Bossmanager.transform.position = Vector2.MoveTowards(Bossmanager.transform.position,
         parameter.target.position, parameter.throwSpeed * Time.deltaTime);
-        if (timer>=parameter .throwtime)
+        if (timer >= parameter.throwtime)
         {
             Bossmanager.TransitionState(BossStateType.BossChase);
         }

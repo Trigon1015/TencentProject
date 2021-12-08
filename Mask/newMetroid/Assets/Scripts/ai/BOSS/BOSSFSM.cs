@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public enum BossStateType
 {
-    BossIdle,  BossChase, BossCharge, BossThrow
+    BossIdle, BossChase, BossCharge, BossThrow
 }
 [Serializable]
 public class BossParameter
@@ -26,8 +26,8 @@ public class BossParameter
 
     //public float attackSpeed = 3;
     //public bool shoot = false;
-  
-    
+
+
     public Rigidbody2D rb;
 }
 
@@ -42,14 +42,14 @@ public class BOSSFSM : MonoBehaviour
 
     void Start()//Ìí¼Ó¸÷×´Ì¬µ½×Öµä
     {
-        states.Add(BossStateType.BossIdle, new BossIdleState(this ));
+        states.Add(BossStateType.BossIdle, new BossIdleState(this));
         states.Add(BossStateType.BossChase, new BossChaseState(this));
         states.Add(BossStateType.BossCharge, new BossChargeState(this));
         states.Add(BossStateType.BossThrow, new BossThrowState(this));
         TransitionState(BossStateType.BossIdle);
 
         parameter.animator = GetComponent<Animator>();
-    
+
 
     }
 
@@ -89,7 +89,7 @@ public class BOSSFSM : MonoBehaviour
     //{
     //    Gizmos.DrawWireSphere(parameter.attackPoint.position, parameter.attackArea);
     //}
-    
+
     public void TransitionState(BossStateType type)
     {
         if (currentState! != null)

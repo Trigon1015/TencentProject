@@ -7,12 +7,12 @@ public class Boss2Enemy : MonoBehaviour
     public int health;
     public float moveSpeed;
     public Animator animator;
-    
+
     public LayerMask targetLayer;
     public Transform attackPoint;
     public float attackArea;
     public Transform enemy;
-    public GameObject  BossEnemy;
+    public GameObject BossEnemy;
     public float enemyvalue;
     public Transform target;
     public GameObject player;
@@ -20,7 +20,7 @@ public class Boss2Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
     }
     //private void OnDrawGizmos()
     //  {
@@ -44,35 +44,35 @@ public class Boss2Enemy : MonoBehaviour
 
             gameObject.SetActive(false);
         }
-        player =GameObject.FindGameObjectWithTag("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         if (target != null)
         {
             if (transform.position.x > target.position.x)
             {
                 transform.localScale = new Vector3(1, 1, 1);
-                
+
 
             }
             else if (transform.position.x < target.position.x)
             {
                 transform.localScale = new Vector3(-1, 1, 1);
-                
+
             }
         }
-        BossEnemy.transform .position = Vector2.MoveTowards(BossEnemy.transform.position,
+        BossEnemy.transform.position = Vector2.MoveTowards(BossEnemy.transform.position,
         target.position, moveSpeed * Time.deltaTime);
         if (Physics2D.OverlapCircle(enemy.position, enemyvalue, targetLayer))
         {
 
             PlayerManager.PlayerHP--;
-           
+
         }
-        if (Physics2D.OverlapCircle(attackPoint .position, attackArea , targetLayer))
+        if (Physics2D.OverlapCircle(attackPoint.position, attackArea, targetLayer))
         {
             int modelindex = Random.Range(0, 8);
-            
-            if (modelindex==0)
+
+            if (modelindex == 0)
             {
                 animator.Play("1");
             }
@@ -104,7 +104,7 @@ public class Boss2Enemy : MonoBehaviour
             {
                 animator.Play("8");
             }
-           
+
 
 
         }

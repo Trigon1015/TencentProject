@@ -10,19 +10,19 @@ public class BossEnemy : MonoBehaviour
     public UnityEngine.Transform point3;
     public UnityEngine.Transform point4;
     public UnityEngine.Transform point5;
-    public bool active=true;
+    public bool active = true;
     public bool active1 = true;
     public bool active2 = true;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Boss2ChaseState.hp <=9&&active==true )
+        if (Boss2ChaseState.hp <= 9 && active == true)
         {
             Instantiate(enemy, point.position, point.rotation);
             Instantiate(enemy, point2.position, point2.rotation);

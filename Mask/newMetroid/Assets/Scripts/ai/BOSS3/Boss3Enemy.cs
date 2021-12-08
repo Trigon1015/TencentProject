@@ -39,10 +39,10 @@ public class Boss3Enemy : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(bossdead, transform.position, transform.rotation);
-           
+
             gameObject.SetActive(false);
         }
-        
+
         player = GameObject.FindGameObjectWithTag("Player");
         target = player.transform;
         if (target != null)

@@ -52,7 +52,7 @@ public class BOSS3FSM : MonoBehaviour
 
 
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
@@ -66,8 +66,12 @@ public class BOSS3FSM : MonoBehaviour
         if (parameter.health <= 4)
         {
             ChangeWorld.change = 1;
-            parameter.boss.layer = 18;  
+            parameter.boss.layer = 18;
 
+        }
+        if (GameObject.FindGameObjectWithTag("bossenemy") == null)
+        {
+            parameter.boss.layer = 18;
         }
         currentState.OnUpdate();
         if (parameter.shoot == true)
