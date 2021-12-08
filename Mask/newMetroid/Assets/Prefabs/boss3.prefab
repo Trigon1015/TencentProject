@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8178098108026519266}
   - component: {fileID: 8178098108026519269}
   - component: {fileID: 8178098108026519268}
-  m_Layer: 0
+  - component: {fileID: 3551828219794596458}
+  m_Layer: 9
   m_Name: boss3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 988476483
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7869ababcd5926e46a9dfa34e8170a6e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -135,13 +136,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parameter:
-    health: 0
+    health: 10
     throwSpeed: 0
     chaseSpeed: 0
     throwtime: 0
-    idleTime: 0
+    idleTime: 5
     chargeSpeed: 0
-    animator: {fileID: 0}
+    animator: {fileID: 8178098108026519271}
     target: {fileID: 0}
     targetLayer:
       serializedVersion: 2
@@ -156,7 +157,7 @@ MonoBehaviour:
     BossFirepoint: {fileID: 0}
     rb: {fileID: 0}
     player: {fileID: 0}
-    boss: {fileID: 0}
+    boss: {fileID: 8178098108026519256}
 --- !u!114 &8178098108026519268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,3 +171,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossdead: {fileID: 3520532385397676803, guid: d8c664069e0566147b5671417a50adac, type: 3}
+--- !u!61 &3551828219794596458
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8178098108026519256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.66367245, y: 0.6033397}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 30.000002, y: 30.000002}
+    newSize: {x: 30.000002, y: 30.000002}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.296453, y: 11.658462}
+  m_EdgeRadius: 0
