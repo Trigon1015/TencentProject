@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         
 
         //面具3
-        if()
+        
         Castle();
         
         //面具1
