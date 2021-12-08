@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Boss3Enemy : MonoBehaviour
 {
-    public int health;
+    public static int health=3;
     public float moveSpeed;
     public Animator animator;
 
-    public LayerMask targetLayer;
+    public static LayerMask targetLayer;
     //public Transform attackPoint;
     //public float attackArea;
-    public Transform enemy;
+    public static Transform enemy;
     public GameObject BossEnemy;
-    public float enemyvalue;
+    public static float enemyvalue;
     public Transform target;
     public GameObject player;
     public GameObject bossdead;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +27,13 @@ public class Boss3Enemy : MonoBehaviour
     //  {
     //     Gizmos.DrawWireSphere(attackPoint.position, attackArea);
     //  }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Bullet")
-        {
-            health--;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Bullet")
+    //    {
+    //        health--;
+    //    }
+    //}
     // Update is called once per frame
     void Update()
     {
@@ -61,12 +62,12 @@ public class Boss3Enemy : MonoBehaviour
         }
         BossEnemy.transform.position = Vector2.MoveTowards(BossEnemy.transform.position,
         target.position, moveSpeed * Time.deltaTime);
-        if (Physics2D.OverlapCircle(enemy.position, enemyvalue, targetLayer))
-        {
+        //if (Physics2D.OverlapCircle(enemy.position, enemyvalue, targetLayer))
+        //{
 
-            PlayerManager.PlayerHP--;
+        //    PlayerManager.PlayerHP--;
 
-        }
+        //}
         animator.Play("cell");
 
 
