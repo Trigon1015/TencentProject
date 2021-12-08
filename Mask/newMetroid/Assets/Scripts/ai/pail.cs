@@ -44,13 +44,7 @@ public class pail : MonoBehaviour
 
         }
 
-        if (info.gameObject.tag == "Shield")
-        {
-
-
-           
-
-        }
+        
 
 
 

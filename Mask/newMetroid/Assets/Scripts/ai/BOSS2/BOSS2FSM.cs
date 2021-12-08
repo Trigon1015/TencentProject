@@ -65,7 +65,7 @@ public class BOSS2FSM : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.tag == "Bullet")
         {
             parameter.health--;
         }
