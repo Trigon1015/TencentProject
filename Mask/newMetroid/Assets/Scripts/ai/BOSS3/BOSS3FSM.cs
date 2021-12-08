@@ -44,8 +44,8 @@ public class BOSS3FSM : MonoBehaviour
     {
         states.Add(BossStateType3.BossIdle, new Boss3IdleState(this));
         states.Add(BossStateType3.BossChase, new Boss3ChaseState(this));
-        //states.Add(BossStateType3.BossCharge, new Boss3ChargeState(this));
-        //states.Add(BossStateType3.BossThrow, new Boss3ThrowState(this));
+        states.Add(BossStateType3.BossCharge, new Boss3ChargeState(this));
+        states.Add(BossStateType3.BossThrow, new Boss3ThrowState(this));
         TransitionState(BossStateType3.BossIdle);
 
         parameter.animator = GetComponent<Animator>();

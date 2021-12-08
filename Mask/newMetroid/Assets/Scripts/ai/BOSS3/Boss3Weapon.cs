@@ -14,7 +14,7 @@ public class Boss3Weapon : MonoBehaviour
     public UnityEngine.Transform lightpoint8;
     public GameObject Prefabs;
    
-    public float time = 0;
+    public float time = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,7 @@ public class Boss3Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time = 2;
         if (Boss3ChaseState.up  == true)
         {
            
@@ -56,6 +56,11 @@ public class Boss3Weapon : MonoBehaviour
             if (time >= 1.99999)
             {
                 Instantiate(Prefabs, lightpoint3.position, lightpoint3.rotation);
+                Instantiate(Prefabs, lightpoint4.position, lightpoint4.rotation);
+                Instantiate(Prefabs, lightpoint5.position, lightpoint5.rotation);
+                Instantiate(Prefabs, lightpoint6.position, lightpoint6.rotation);
+                Instantiate(Prefabs, lightpoint7.position, lightpoint7.rotation);
+                Instantiate(Prefabs, lightpoint8.position, lightpoint8.rotation);
                 time = 0;
             }
 

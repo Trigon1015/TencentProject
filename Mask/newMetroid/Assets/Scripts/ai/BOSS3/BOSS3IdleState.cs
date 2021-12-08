@@ -17,7 +17,7 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
     {
         parameter.animator.Play("Standby");
         Debug.Log("Õ¾Á¢");
-        int modelindex = Random.Range(0, 3);
+         modelindex = Random.Range(0, 3);
     }
 
 
@@ -83,17 +83,23 @@ public class Boss3ChaseState : BossIstate3//Õ¾Á¢×´Ì¬
     }
     public void OnEnter()
     {
-        up = true;
+        up = true; Debug.Log("1");
     }
 
 
     public void OnUpdate()
     {
+        timer += Time.deltaTime;
+        //if (timer >= parameter.idleTime)
+        //{
+        //    Bossmanager.TransitionState(BossStateType3.BossCharge);
+        //}
+        Bossmanager.TransitionState(BossStateType3.BossIdle);
         if (parameter.health <= 0)
         {
             death.dead = true;
         }
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+     
     }
     public void OnExit()
     {
@@ -115,17 +121,23 @@ public class Boss3ChargeState : BossIstate3//Õ¾Á¢×´Ì¬
     }
     public void OnEnter()
     {
-        down = true;
+        down = true; Debug.Log("2");
     }
 
 
     public void OnUpdate()
     {
+        //timer += Time.deltaTime;
+        //if (timer >= parameter.idleTime)
+        //{
+        //    Bossmanager.TransitionState(BossStateType3.BossThrow);
+        //}
+        Bossmanager.TransitionState(BossStateType3.BossIdle);
         if (parameter.health <= 0)
         {
             death.dead = true;
         }
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+        
     }
     public void OnExit()
     {
@@ -150,17 +162,23 @@ public class Boss3ThrowState : BossIstate3//Õ¾Á¢×´Ì¬
     }
     public void OnEnter()
     {
-        right = true;
+        right = true; Debug.Log("3");
     }
 
 
     public void OnUpdate()
     {
+        //timer += Time.deltaTime;
+        //if (timer >= parameter.idleTime)
+        //{
+        //    Bossmanager.TransitionState(BossStateType3.BossIdle);
+        //}
+        Bossmanager.TransitionState(BossStateType3.BossIdle);
         if (parameter.health <= 0)
         {
             death.dead = true;
         }
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+        
     }
     public void OnExit()
     {
