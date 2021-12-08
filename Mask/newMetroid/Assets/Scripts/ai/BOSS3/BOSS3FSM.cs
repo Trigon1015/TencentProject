@@ -66,7 +66,7 @@ public class BOSS3FSM : MonoBehaviour
         if (parameter.health <= 4)
         {
             ChangeWorld.change = 1;
-            parameter.boss.layer = 1;  
+            parameter.boss.layer = 18;  
 
         }
         currentState.OnUpdate();
