@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float lowJumpMultiplier;
     
 
-    static public int availableJumps = 2;
+    static public int availableJumps = 1;
     static public int availableJumpsLeft;
     static public bool MaskUpgrade = true;
     static public bool MorphUpgrade = true;
@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(availableJumpsLeft);
+       
         if(MorphUpgrade==true)
         {
             small = 1;

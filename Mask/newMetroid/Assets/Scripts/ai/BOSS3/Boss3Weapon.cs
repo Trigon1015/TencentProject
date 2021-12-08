@@ -18,6 +18,7 @@ public class Boss3Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Instantiate(Prefabs, lightpoint.position, lightpoint.rotation);
         if (Boss3ChaseState.up  == true)
         {
             Instantiate(Prefabs, lightpoint.position, lightpoint.rotation);
