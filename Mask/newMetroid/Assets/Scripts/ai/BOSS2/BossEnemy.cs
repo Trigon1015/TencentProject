@@ -28,6 +28,7 @@ public class BossEnemy : MonoBehaviour
             Instantiate(enemy, point2.position, point2.rotation);
             Instantiate(enemy, point3.position, point3.rotation);
             active = false;
+            Debug.Log("1");
         }
         if (Boss2ChaseState.hp <= 6 && active1 == true)
         {
