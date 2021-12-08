@@ -17,7 +17,8 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
     {
         parameter.animator.Play("Standby");
         Debug.Log("Õ¾Á¢");
-         modelindex = Random.Range(0, 3);
+        modelindex = Random.Range(0, 3);
+        
     }
 
 
@@ -90,11 +91,12 @@ public class Boss3ChaseState : BossIstate3//Õ¾Á¢×´Ì¬
     public void OnUpdate()
     {
         timer += Time.deltaTime;
-        //if (timer >= parameter.idleTime)
-        //{
-        //    Bossmanager.TransitionState(BossStateType3.BossCharge);
-        //}
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+        if (timer >= parameter.idleTime)
+        {timer = 0;
+            Bossmanager.TransitionState(BossStateType3.BossIdle);
+            
+        }
+        
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -132,7 +134,14 @@ public class Boss3ChargeState : BossIstate3//Õ¾Á¢×´Ì¬
         //{
         //    Bossmanager.TransitionState(BossStateType3.BossThrow);
         //}
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+        timer += Time.deltaTime;
+        if (timer >= parameter.idleTime)
+        {
+            timer = 0;
+            Bossmanager.TransitionState(BossStateType3.BossIdle);
+
+        }
+        
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -173,7 +182,14 @@ public class Boss3ThrowState : BossIstate3//Õ¾Á¢×´Ì¬
         //{
         //    Bossmanager.TransitionState(BossStateType3.BossIdle);
         //}
-        Bossmanager.TransitionState(BossStateType3.BossIdle);
+        timer += Time.deltaTime;
+        
+        if (timer >= parameter.idleTime)
+        {
+            timer = 0;
+            Bossmanager.TransitionState(BossStateType3.BossIdle);
+
+        }
         if (parameter.health <= 0)
         {
             death.dead = true;

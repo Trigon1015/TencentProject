@@ -52,7 +52,7 @@ public class UiManager : MonoBehaviour
     }
     public void ExitGame()
     {
-        SceneManager.LoadScene(0);
+        Application.Quit();
     }
 
     public void SaveGame()
@@ -66,12 +66,9 @@ public class UiManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex > scene || SceneManager.GetActiveScene().buildIndex < scene)
         {
             SceneManager.LoadScene(scene);
-
-
         }
         Time.timeScale = 1;
         loadhealth();
-
         X();
         Y();
         Z();

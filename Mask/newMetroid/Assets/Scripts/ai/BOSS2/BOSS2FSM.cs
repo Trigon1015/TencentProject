@@ -76,7 +76,7 @@ public class BOSS2FSM : MonoBehaviour
         currentState.OnUpdate();
         parameter.player = GameObject.FindGameObjectWithTag("Player");
         parameter.target = parameter.player.transform;
-
+        ChangeWorld.change = 0; 
     }
     public void FlipTO(Transform target)//使怪物朝向正常
     {

@@ -13,8 +13,12 @@ public class Boss3Weapon : MonoBehaviour
     public UnityEngine.Transform lightpoint7;
     public UnityEngine.Transform lightpoint8;
     public GameObject Prefabs;
-   
-    public float time = 2;
+    public GameObject warn;
+    public bool activate= true;
+    public bool activate2= true;
+
+
+    public float time = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +28,27 @@ public class Boss3Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time = 2;
+      Debug.Log(time);
         if (Boss3ChaseState.up  == true)
-        {
-           
-            time += Time.deltaTime;
-            if (time >= 1.99999)
+        {time += Time.deltaTime;
+           if (time>=0&&activate ==true)
+            {
+                Instantiate(warn, lightpoint.position, lightpoint.rotation);
+                activate =false;
+            }
+            
+            if (time >= 2&&activate2==true )
             {
                 Instantiate(Prefabs, lightpoint.position, lightpoint.rotation);
-                time = 0;
+                activate2 = false;
             }
+            if(time>=3.9999)
+            {
+                time = 0;
+                activate = true; activate2 = true;
+
+            }
+            
 
 
         }
@@ -41,10 +56,20 @@ public class Boss3Weapon : MonoBehaviour
         {
           
             time += Time.deltaTime;
-            if (time >= 1.99999)
+            if (time >= 0 && activate == true)
+            {
+                Instantiate(warn, lightpoint2.position, lightpoint2.rotation); activate = false;
+            }
+            if (time >= 2 && activate2 == true)
             {
                 Instantiate(Prefabs, lightpoint2.position, lightpoint2.rotation);
+                activate2 = false;
+            }
+            if (time >= 3.999)
+            {
                 time = 0;
+                activate = true; activate2 = true;
+
             }
 
 
@@ -53,7 +78,17 @@ public class Boss3Weapon : MonoBehaviour
         {
 
             time += Time.deltaTime;
-            if (time >= 1.99999)
+            if (time >= 0 && activate == true)
+            {
+                Instantiate(warn, lightpoint3.position, lightpoint3.rotation);
+                Instantiate(warn, lightpoint4.position, lightpoint4.rotation);
+                Instantiate(warn, lightpoint5.position, lightpoint5.rotation);
+                Instantiate(warn, lightpoint6.position, lightpoint6.rotation);
+                Instantiate(warn, lightpoint7.position, lightpoint7.rotation);
+                Instantiate(warn, lightpoint8.position, lightpoint8.rotation); activate = false;
+
+            }
+            if (time >= 2 && activate2 == true)
             {
                 Instantiate(Prefabs, lightpoint3.position, lightpoint3.rotation);
                 Instantiate(Prefabs, lightpoint4.position, lightpoint4.rotation);
@@ -61,7 +96,13 @@ public class Boss3Weapon : MonoBehaviour
                 Instantiate(Prefabs, lightpoint6.position, lightpoint6.rotation);
                 Instantiate(Prefabs, lightpoint7.position, lightpoint7.rotation);
                 Instantiate(Prefabs, lightpoint8.position, lightpoint8.rotation);
+                activate2 = false;
+            }
+            if (time >= 3.999)
+            {
                 time = 0;
+                activate = true; activate2 = true;
+
             }
 
 
