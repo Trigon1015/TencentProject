@@ -10,11 +10,9 @@ public enum BossStateType3
 public class BossParameter3
 {
     public int health;
-    public float throwSpeed;
-    public float chaseSpeed;
-    public float throwtime;
+    
     public float idleTime;
-    public float chargeSpeed;
+   
     public Animator animator;
     public Transform target;
     public LayerMask targetLayer;
@@ -52,7 +50,7 @@ public class BOSS3FSM : MonoBehaviour
 
 
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
@@ -66,8 +64,12 @@ public class BOSS3FSM : MonoBehaviour
         if (parameter.health <= 4)
         {
             ChangeWorld.change = 1;
-            parameter.boss.layer = 1;  
+            parameter.boss.layer = 18;
 
+        }
+        if (GameObject.FindGameObjectWithTag("bossenemy") == null)
+        {
+            parameter.boss.layer = 9;
         }
         currentState.OnUpdate();
         if (parameter.shoot == true)

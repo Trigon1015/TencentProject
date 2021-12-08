@@ -27,13 +27,18 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
         {
             death.dead = true;
         }
-        
+        if (parameter.health <= 4)
+        {
+            parameter.animator.Play("switch");
+        }
+
+
         timer += Time.deltaTime;
         Bossmanager.FlipTO(parameter.target);
-        
+
         if (timer >= parameter.idleTime)
         {
-            if (modelindex==0)
+            if (modelindex == 0)
             {
                 Bossmanager.TransitionState(BossStateType3.BossChase);
                 timer = 0;
@@ -48,7 +53,7 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
                 Bossmanager.TransitionState(BossStateType3.BossThrow);
                 timer = 0;
             }
-            
+
 
 
 
@@ -95,7 +100,7 @@ public class Boss3ChaseState : BossIstate3//Õ¾Á¢×´Ì¬
         up = false;
     }
 
-    
+
 }
 public class Boss3ChargeState : BossIstate3//Õ¾Á¢×´Ì¬
 {
@@ -145,7 +150,7 @@ public class Boss3ThrowState : BossIstate3//Õ¾Á¢×´Ì¬
     }
     public void OnEnter()
     {
-       right = true;
+        right = true;
     }
 
 

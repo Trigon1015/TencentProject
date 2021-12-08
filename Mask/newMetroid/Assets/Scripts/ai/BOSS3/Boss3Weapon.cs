@@ -12,13 +12,13 @@ public class Boss3Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Boss3ChaseState.up  == true)
+        if (Boss3ChaseState.up == true)
         {
 
             time += Time.deltaTime;
