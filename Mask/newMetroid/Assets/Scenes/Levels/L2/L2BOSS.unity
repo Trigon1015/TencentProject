@@ -219,6 +219,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3542213095756337686, guid: c0a90326279e2c34ea1329b80ac718e4, type: 3}
+      propertyPath: parameter.chaseSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542213095756337686, guid: c0a90326279e2c34ea1329b80ac718e4, type: 3}
       propertyPath: parameter.enemyvalue
       value: 2
       objectReference: {fileID: 0}
