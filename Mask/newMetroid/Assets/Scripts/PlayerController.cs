@@ -574,7 +574,7 @@ public class PlayerController : MonoBehaviour
             isCrouchShooting = false;
             countdown = 1;
         }
-
+           
         
 
 
@@ -582,6 +582,15 @@ public class PlayerController : MonoBehaviour
 
 
 
+    }
+
+    private void OnTriggerEnter2D(Collider2D info)
+    {
+        if (info.gameObject.tag == "Trap")
+        {
+            PlayerManager.PlayerHP -= 1;
+            Debug.Log("hurt");
+        }
     }
 
 
