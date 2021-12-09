@@ -44,9 +44,9 @@ public class Boss3Weapon : MonoBehaviour
             }
             if(time>=3.9999)
             {
-                time = 0;
+                time = 0; Boss3ChaseState.up =false;
                 activate = true; activate2 = true;
-
+               
             }
             
 
@@ -67,9 +67,9 @@ public class Boss3Weapon : MonoBehaviour
             }
             if (time >= 3.999)
             {
-                time = 0;
+                time = 0;Boss3ChargeState.down = false;
                 activate = true; activate2 = true;
-
+                
             }
 
 
@@ -100,9 +100,9 @@ public class Boss3Weapon : MonoBehaviour
             }
             if (time >= 3.999)
             {
-                time = 0;
+                time = 0;Boss3ThrowState.right = false;
                 activate = true; activate2 = true;
-
+                
             }
 
 
