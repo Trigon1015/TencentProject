@@ -202,7 +202,7 @@ public class PlayerController : MonoBehaviour
         
         
     }
-    int i = 1;
+    
     private void CheckInput()
     {
         //PC
