@@ -588,7 +588,10 @@ public class PlayerController : MonoBehaviour
     {
         if (info.gameObject.tag == "Trap")
         {
-            PlayerManager.PlayerHP -= 1;
+            if (PlayerManager.PlayerHP > 0)
+            {
+                PlayerManager.PlayerHP--;
+            }
             Debug.Log("hurt");
         }
     }
