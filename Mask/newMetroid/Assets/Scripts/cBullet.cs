@@ -22,7 +22,7 @@ public class cBullet : MonoBehaviour
         if (time <= 0)
         {
             Destroy(gameObject);
-            Debug.Log("destroycbullet");
+            
             time = 1f;
         }
         

@@ -18,8 +18,8 @@ public class Shield : MonoBehaviour
         
         
     }
-    public static int bullet=3;
-    
+    public static int bullet = 0;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

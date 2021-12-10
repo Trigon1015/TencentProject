@@ -13,6 +13,7 @@ TagManager:
   - Bullet BLUE
   - BossBullet
   - bossenemy
+  - Trap
   layers:
   - Default
   - TransparentFX

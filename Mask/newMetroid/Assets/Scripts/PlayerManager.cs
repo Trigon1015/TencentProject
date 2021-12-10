@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
 
     //player attribute
     public static float PlayerHP = 5f;
-    public static float PlayerMaxHP = 6f;
+    public static float PlayerMaxHP = 5f;
     
     // Start is called before the first frame update
     void Start()
