@@ -12,11 +12,19 @@ public class Boss3Weapon : MonoBehaviour
     public UnityEngine.Transform lightpoint6;
     public UnityEngine.Transform lightpoint7;
     public UnityEngine.Transform lightpoint8;
+    public UnityEngine.Transform lightpoint11;
+    public UnityEngine.Transform lightpoint22;
+    public UnityEngine.Transform lightpoint33;
+    public UnityEngine.Transform lightpoint44;
+    public UnityEngine.Transform lightpoint55;
+    public UnityEngine.Transform lightpoint66;
+    public UnityEngine.Transform lightpoint77;
+    public UnityEngine.Transform lightpoint88;
     public GameObject Prefabs;
     public GameObject warn;
     public bool activate= true;
     public bool activate2= true;
-
+    
 
     public float time = 0;
     // Start is called before the first frame update
@@ -33,7 +41,7 @@ public class Boss3Weapon : MonoBehaviour
         {time += Time.deltaTime;
            if (time>=0&&activate ==true)
             {
-                Instantiate(warn, lightpoint.position, lightpoint.rotation);
+                Instantiate(warn, lightpoint11.position, lightpoint11.rotation);
                 activate =false;
             }
             
@@ -48,8 +56,8 @@ public class Boss3Weapon : MonoBehaviour
                 activate = true; activate2 = true;
                
             }
-            
 
+            
 
         }
         if (Boss3ChargeState.down == true)
@@ -58,7 +66,7 @@ public class Boss3Weapon : MonoBehaviour
             time += Time.deltaTime;
             if (time >= 0 && activate == true)
             {
-                Instantiate(warn, lightpoint2.position, lightpoint2.rotation); activate = false;
+                Instantiate(warn, lightpoint22.position, lightpoint22.rotation); activate = false;
             }
             if (time >= 2 && activate2 == true)
             {
@@ -80,12 +88,12 @@ public class Boss3Weapon : MonoBehaviour
             time += Time.deltaTime;
             if (time >= 0 && activate == true)
             {
-                Instantiate(warn, lightpoint3.position, lightpoint3.rotation);
-                Instantiate(warn, lightpoint4.position, lightpoint4.rotation);
-                Instantiate(warn, lightpoint5.position, lightpoint5.rotation);
-                Instantiate(warn, lightpoint6.position, lightpoint6.rotation);
-                Instantiate(warn, lightpoint7.position, lightpoint7.rotation);
-                Instantiate(warn, lightpoint8.position, lightpoint8.rotation); activate = false;
+                Instantiate(warn, lightpoint33.position, lightpoint33.rotation);
+                Instantiate(warn, lightpoint44.position, lightpoint44.rotation);
+                Instantiate(warn, lightpoint55.position, lightpoint55.rotation);
+                Instantiate(warn, lightpoint66.position, lightpoint66.rotation);
+                Instantiate(warn, lightpoint77.position, lightpoint77.rotation);
+                Instantiate(warn, lightpoint88.position, lightpoint88.rotation); activate = false;
 
             }
             if (time >= 2 && activate2 == true)

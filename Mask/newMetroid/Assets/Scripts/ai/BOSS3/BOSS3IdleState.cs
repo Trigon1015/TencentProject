@@ -18,7 +18,9 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
         parameter.animator.Play("Standby");
         Debug.Log("Õ¾Á¢");
         modelindex = Random.Range(0, 3);
-        
+         
+
+
     }
 
 
