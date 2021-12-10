@@ -479,7 +479,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!inverted)
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (gravity .ni&&gravity.chen%2==1)
             {
                 
                 rb.gravityScale = -1;
@@ -490,7 +490,7 @@ public class PlayerController : MonoBehaviour
         }
         if (inverted)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (gravity.ni && gravity.chen % 2 == 0)
             {
                 
                 rb.gravityScale = 1;

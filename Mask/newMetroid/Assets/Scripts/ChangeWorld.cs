@@ -81,7 +81,7 @@ public class ChangeWorld : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.L ) &&change==1)
+        if (change1.world && change==1)
         {
             if (ChangeWorldCheck.ischanged == false)
             {

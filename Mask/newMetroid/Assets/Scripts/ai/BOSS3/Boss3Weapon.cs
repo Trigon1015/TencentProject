@@ -28,7 +28,7 @@ public class Boss3Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      Debug.Log(time);
+     
         if (Boss3ChaseState.up  == true)
         {time += Time.deltaTime;
            if (time>=0&&activate ==true)
