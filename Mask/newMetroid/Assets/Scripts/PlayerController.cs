@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     public static int sheild = 0;
     public static bool MaskH = false;
     public static bool CastleUpgrade = false;
+   
 
 
 
@@ -111,6 +112,8 @@ public class PlayerController : MonoBehaviour
         {
             MaskUpgrade = true;
         }
+       
+            
 
 
 
@@ -274,6 +277,8 @@ public class PlayerController : MonoBehaviour
         if (isCrouching)
         {
             movementSpeed = 0;
+            
+
             
         }
         else

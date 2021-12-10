@@ -23,7 +23,8 @@ public class Parameter
     public float attackArea;
     public Transform enemy ;
     public float enemyvalue;
-    
+    public GameObject player;
+
 
 }
 public class FSM : MonoBehaviour
@@ -54,7 +55,8 @@ public class FSM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentState.OnUpdate();
+        currentState.OnUpdate(); parameter.player = GameObject.FindGameObjectWithTag("Player");
+        parameter.target = parameter.player.transform;
     }
 
     public  void TransitionState(StateType type)
