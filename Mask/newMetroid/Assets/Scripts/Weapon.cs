@@ -27,8 +27,8 @@ public class Weapon : MonoBehaviour
                 //if (Input.GetButtonDown("Fire1"))
                 if(Shoot.SisPressed && !PlayerController.isSmall)
                 {
-
-                    if(Shield.bullet != 0)
+                    
+                    if (Shield.bullet != 0)
                     {
                         count--;
                     }
@@ -87,8 +87,8 @@ public class Weapon : MonoBehaviour
     void Shooting()
     {
         //shooting logic
-        
-        if(!PlayerController.isCrouching)
+        PlayerController.isTalking = !PlayerController.isTalking;
+        if (!PlayerController.isCrouching)
         {
             if (PlayerController.isShootingUp)
             {

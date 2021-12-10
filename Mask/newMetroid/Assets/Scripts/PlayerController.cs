@@ -253,9 +253,9 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Shoot.SisPressed)
         {
-            isTalking =!isTalking ;
+            
             Debug.Log(isTalking);
         }
 

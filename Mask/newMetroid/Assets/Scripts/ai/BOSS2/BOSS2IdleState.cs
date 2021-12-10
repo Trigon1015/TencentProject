@@ -86,7 +86,7 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
             enemy = 1;
             change = 1;
             Bossmanager.TransitionState(BossStateType2.enemy);
-
+            parameter .talk.SetActive(true);
 
         }
         if (parameter.health < 6 && active2 == true)
@@ -95,7 +95,7 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
             enemy = 2;
             change = 2;
             Bossmanager.TransitionState(BossStateType2.enemy);
-
+            parameter.talk.SetActive(true);
         }
         if (parameter.health < 2 && active3 == true)
         {
@@ -103,7 +103,7 @@ public class Boss2ChaseState : BossIstate2//ÒÆ¶¯×´Ì¬
             enemy = 3;
             change = 3;
             Bossmanager.TransitionState(BossStateType2.enemy);
-
+            parameter.talk.SetActive(true);
         }
 
 

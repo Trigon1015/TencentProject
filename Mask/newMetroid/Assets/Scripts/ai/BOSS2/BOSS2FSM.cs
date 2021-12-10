@@ -32,6 +32,7 @@ public class BossParameter2
 
     public Rigidbody2D rb;
     public GameObject player;
+    public GameObject talk;
     //public bool nail;
     // public bool pail;
 
