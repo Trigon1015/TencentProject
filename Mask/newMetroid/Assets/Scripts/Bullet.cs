@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (info.gameObject.tag == "boss")
+        if (info.gameObject.tag == "bossenemy")
         {
 
             Instantiate(Impact, transform.position, transform.rotation);

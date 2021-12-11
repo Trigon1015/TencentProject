@@ -116,7 +116,7 @@ public class Weapon : MonoBehaviour
                 if (Shield.bullet == 3)
                 {
                     Instantiate(BossbulletPrefabs, Upfirepoint.position, firepoint.rotation);
-                    Shield.bullet = 0;
+                    
                 }
             }
             

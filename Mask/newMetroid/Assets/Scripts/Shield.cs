@@ -13,10 +13,11 @@ public class Shield : MonoBehaviour
 
     void Update()
     {
-       
-       
+
+
         
-        
+
+
     }
     public static int bullet = 0;
 

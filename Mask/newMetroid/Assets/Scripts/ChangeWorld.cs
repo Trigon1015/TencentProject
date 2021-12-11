@@ -12,8 +12,8 @@ public class ChangeWorld : MonoBehaviour
     public static bool active5 = false;
     public static bool active6 = false;
     public static int change = 0;
-    //public GameObject camera1;
-    //public GameObject camera2;
+    public GameObject camera1;
+    public GameObject camera2;
 
 
     // Start is called before the first frame update
@@ -36,6 +36,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
             
                 transform.position += new Vector3(0, -16, 0);
+            camera1.SetActive(false);
+            camera2.SetActive(true);
             active = true;
            
         }
@@ -45,6 +47,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
 
             transform.position += new Vector3(0, -16, 0);
+            camera1.SetActive(false);
+            camera2.SetActive(true);
             active2 = true;
 
         }
@@ -54,6 +58,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
 
             transform.position += new Vector3(0, -16, 0);
+            camera1.SetActive(false);
+            camera2.SetActive(true);
             active3 = true;
 
         }
@@ -63,6 +69,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
 
             transform.position += new Vector3(0, 22, 0);
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             active4 = true;
 
         }
@@ -72,6 +80,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
 
             transform.position += new Vector3(0, 22, 0);
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             active5 = true;
 
         }
@@ -81,6 +91,8 @@ public class ChangeWorld : MonoBehaviour
             //Debug.Log(i);
 
             transform.position += new Vector3(0, 22, 0);
+            camera1.SetActive(true);
+            camera2.SetActive(false);
             active6 = true;
 
         }
@@ -95,10 +107,16 @@ public class ChangeWorld : MonoBehaviour
                 if (i % 2 == 0)
                 {
                     transform.position += new Vector3(0, -16, 0);
+                    camera2.SetActive(true);
+                    camera1.SetActive(false); 
+                    
                 }
                 else
                 {
                     transform.position += new Vector3(0, 16, 0);
+                    camera2.SetActive(false);
+                    camera1.SetActive(true);
+                    
                 }
             }
         }
