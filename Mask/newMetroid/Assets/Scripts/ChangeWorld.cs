@@ -12,6 +12,10 @@ public class ChangeWorld : MonoBehaviour
     public static bool active5 = false;
     public static bool active6 = false;
     public static int change = 0;
+    //public GameObject camera1;
+    //public GameObject camera2;
+
+
     // Start is called before the first frame update
     void Start()
     {

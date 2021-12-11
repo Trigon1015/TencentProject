@@ -70,14 +70,7 @@ public class Weapon : MonoBehaviour
 
 
             }
-            if ((GameObject.Find("cBullet(Clone)") == null))
-            {
-
-                if (Input.GetButtonDown("Fire2"))
-                {
-                    CShoot();
-                }
-            }
+            
         }
         
     }
