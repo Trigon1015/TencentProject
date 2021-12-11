@@ -71,7 +71,7 @@ public class BOSS3FSM : MonoBehaviour
         }
         if (GameObject.FindGameObjectWithTag("bossenemy") == null)
         {
-            parameter.boss.layer = 18;
+            parameter.boss.layer = 9;
         }
         currentState.OnUpdate();
         if (parameter.shoot == true)
