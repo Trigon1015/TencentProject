@@ -29,6 +29,15 @@ public class BossParameter3
     public Rigidbody2D rb;
     public GameObject player;
     public GameObject boss;
+    public GameObject text;
+    public GameObject a;
+    public GameObject b;
+    public GameObject c;
+    public GameObject d;
+    public GameObject g;
+    public GameObject e;
+    public GameObject f;
+
 }
 
 public class BOSS3FSM : MonoBehaviour
@@ -67,7 +76,14 @@ public class BOSS3FSM : MonoBehaviour
         {
             ChangeWorld.change = 1;
             parameter.boss.layer = 18;
-
+            parameter.text.SetActive(true);
+            parameter.a.SetActive(true);
+            parameter.b.SetActive(true);
+            parameter.c.SetActive(true);
+            parameter.d.SetActive(true);
+            parameter.e.SetActive(true);
+            parameter.f.SetActive(true);
+            parameter.g.SetActive(true);
         }
         if (GameObject.FindGameObjectWithTag("bossenemy") == null)
         {
@@ -88,13 +104,13 @@ public class BOSS3FSM : MonoBehaviour
         {
             if (transform.position.x > target.position.x)
             {
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(1, 1, 1);
                 right = false;
 
             }
             else if (transform.position.x < target.position.x)
             {
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
                 right = true;
             }
         }

@@ -26,6 +26,7 @@ public class Boss3IdleState : BossIstate3//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -92,6 +93,7 @@ public class Boss3ChaseState : BossIstate3//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         timer += Time.deltaTime;
         if (timer >= parameter.idleTime)
         {timer = 0;
@@ -131,6 +133,7 @@ public class Boss3ChargeState : BossIstate3//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         //timer += Time.deltaTime;
         //if (timer >= parameter.idleTime)
         //{
@@ -179,6 +182,7 @@ public class Boss3ThrowState : BossIstate3//Õ¾Á¢×´Ì¬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         //timer += Time.deltaTime;
         //if (timer >= parameter.idleTime)
         //{

@@ -73,6 +73,7 @@ public class Boss2ChaseState : BossIstate2//�ƶ�״̬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         hp = parameter.health;
         Debug.Log(enemy);
         Debug.Log(change);
@@ -156,6 +157,7 @@ public class Boss2ChargeState : BossIstate2//�ж�״̬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -201,6 +203,7 @@ public class Boss2ThrowState : BossIstate2//ˮͰ״̬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -244,6 +247,7 @@ public class Boss2NailState : BossIstate2//ͼ��״̬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         if (parameter.health <= 0)
         {
             death.dead = true;
@@ -288,6 +292,7 @@ public class Boss2EnemyState : BossIstate2//�ٻ�״̬
 
     public void OnUpdate()
     {
+        Bossmanager.FlipTO(parameter.target);
         if (GameObject.FindGameObjectWithTag("bossenemy") == null)
         {
             back++;

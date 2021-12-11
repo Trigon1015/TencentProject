@@ -85,13 +85,13 @@ public class BOSS2FSM : MonoBehaviour
         {
             if (transform.position.x > target.position.x)
             {
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(1, 1, 1);
                 right = false;
 
             }
             else if (transform.position.x < target.position.x)
             {
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
                 right = true;
             }
         }
