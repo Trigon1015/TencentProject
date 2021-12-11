@@ -9,7 +9,7 @@ public class talkdisappear : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (time >= 2)
+        if (time >= 6)
         {
             Destroy(gameObject);
         }
