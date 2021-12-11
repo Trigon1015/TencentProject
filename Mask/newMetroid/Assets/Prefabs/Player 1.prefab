@@ -246,7 +246,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 6693732988689493168, guid: e56f61e0f7e75f84ea2ae8f5f8e2b7c8, type: 3}
   bulletPrefabs1: {fileID: 7998481756860598849, guid: 2d597f3f42021bc42bab72efb6209cca, type: 3}
   bulletPrefabs2: {fileID: 7036965092725687372, guid: f56b00376feb67e449fc24fd4dc5b016, type: 3}
-  BossbulletPrefabs: {fileID: 8834109328873141075, guid: 81a5bb0d680afcf43ab4100bcdf65ffa, type: 3}
+  BossbulletPrefabs: {fileID: 335609209109163698, guid: 8f57e11e4183cb4449bb9dc5cc0fc6b3, type: 3}
   CbulletPrefabs: {fileID: 79638266592473741, guid: 6fea89496ce5c414fa505a4d9e16c116, type: 3}
 --- !u!114 &5513416396472146441
 MonoBehaviour:
@@ -260,6 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0696287464115e64f8c3f9a3e56e8d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera1: {fileID: 0}
+  camera2: {fileID: 0}
 --- !u!1 &5513416395871196683
 GameObject:
   m_ObjectHideFlags: 0
